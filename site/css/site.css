@@ -194,27 +194,31 @@ h2.section-kicker {
   overflow: hidden;
 }
 
-.copy-slot {
-  padding: 0.9rem 1rem;
-  background: repeating-linear-gradient(
-    -45deg,
-    var(--card),
-    var(--card) 10px,
-    #f6f1e6 10px,
-    #f6f1e6 20px
-  );
-  border: 1px dashed #8d7350;
-  border-radius: 12px;
-  color: var(--ink);
+.stack p,
+.hero-copy p,
+.source-list a,
+.source-list li {
+  overflow-wrap: anywhere;
 }
 
-.copy-slot::before {
-  content: "site-content.md " attr(data-copy);
-  display: block;
-  margin-bottom: 0.35rem;
-  font-size: 0.8rem;
+.source-list {
+  display: grid;
+  gap: 1.15rem;
+  min-width: 0;
+  max-width: 46rem;
+}
+
+.source-block p {
   font-weight: 700;
-  color: #6b5433;
+}
+
+.source-list ul {
+  margin: 0.35rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.source-list li + li {
+  margin-top: 0.28rem;
 }
 
 .button,

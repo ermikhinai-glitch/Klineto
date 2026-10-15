@@ -29,6 +29,18 @@
       return;
     }
 
+    var phone = form.querySelector("#phone");
+    var phoneDigits = (phone.value.match(/\d/g) || []).length;
+    var phoneHasLetters = /[^\d\s()+\-]/.test(phone.value);
+    if (phoneDigits < 10 || phoneHasLetters) {
+      phone.setAttribute("aria-invalid", "true");
+      success.hidden = true;
+      error.hidden = false;
+      error.textContent = "Проверьте телефон: в номере нужно не меньше 10 цифр.";
+      phone.focus();
+      return;
+    }
+
     error.hidden = true;
     success.hidden = false;
     success.textContent = "Заявка принята.";
