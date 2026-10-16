@@ -28,42 +28,58 @@
   <a class="skip" href="#content">К содержанию</a>
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="logo" href="/">Klineto</a>
-      <nav class="nav" aria-label="Разделы">
+      <a class="logo" href="/"><img src="/img/mark.svg" width="28" height="28" alt="">Klineto</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Меню"><span class="menu-bars"></span></button>
+      <nav class="nav" id="site-nav" aria-label="Разделы">
         <a href="/uborka-kvartir" aria-current="page">Квартиры</a>
         <a href="/uborka-ofisov">Офисы</a>
+        <a class="header-cta" href="#Действие">Оставить заявку</a>
       </nav>
     </div>
   </header>
   <main id="content">
-      <section class="section hero" id="Экран" aria-labelledby="page-title">
-        <div class="wrap hero-inner">
-          <h1 id="page-title">Уборка квартир в Москве</h1>
+    <section class="section hero" id="Экран" aria-labelledby="page-title">
+      <div class="wrap hero-layout">
+        <h1 id="page-title">Уборка квартир <span class="accent">в Москве</span></h1>
+        <aside class="hero-aside">
+          <img class="pin" src="/img/pin.svg" width="18" height="18" alt="">
           <p>Заявка на уборку квартиры в Москве и Московской области. В форме: имя, телефон, тип объекта и комментарий.</p>
-          <a class="button" href="#Действие">Оставить заявку</a>
-        </div>
-      </section>
-          <section class="services" aria-label="Услуги">
-      <div class="wrap">
-        <ul class="service-grid">
-        <li>Генеральная уборка</li>
-        <li>Уборка после ремонта</li>
-        <li>Поддерживающая уборка</li>
-        <li>Мойка окон</li>
-        <li>Химчистка</li>
-        <li>Уборка дома</li>
-        </ul>
+        </aside>
+        <a class="button button-wide" href="#Действие">Оставить заявку</a>
+        <figure class="hero-figure">
+          <img src="/img/hero-flat.svg" width="1440" height="720" alt="Рисунок спальни" fetchpriority="high">
+          <ul class="pills">
+          <li>Генеральная уборка</li>
+          <li>Уборка после ремонта</li>
+          <li>Поддерживающая уборка</li>
+          </ul>
+        </figure>
       </div>
     </section>
-    <div class="wrap">
-      <section class="section prose" id="Основное" aria-labelledby="main-title">
+    <section class="section prose" id="Основное" aria-labelledby="main-title">
+      <div class="wrap">
         <div class="stack">
           <h2 id="main-title">Сроки и состав уборки</h2>
           <p>Срок и цену смотрите в строках ниже: они с открытых страниц на 15.10.2026. Своего срока выезда у Klineto в этих строках нет.</p>
           <p>В комментарии укажите состав: генеральная уборка, уборка после ремонта, поддерживающая уборка, мойка окон или химчистка. Уборка дома в Москве и области идёт той же заявкой, отдельной страницы нет.</p>
+          <a class="button button-wide" href="#Действие">Оставить заявку</a>
         </div>
-      </section>
-      <section class="section quotes" id="Цена" aria-labelledby="price-title">
+      </div>
+    </section>
+    <section class="services" aria-label="Услуги">
+      <div class="wrap">
+        <ul class="service-grid">
+          <li>Генеральная уборка</li>
+          <li>Уборка после ремонта</li>
+          <li>Поддерживающая уборка</li>
+          <li>Мойка окон</li>
+          <li>Химчистка</li>
+          <li>Уборка дома</li>
+        </ul>
+      </div>
+    </section>
+    <section class="section quotes" id="Цена" aria-labelledby="price-title">
+      <div class="wrap">
         <div class="stack">
           <h2 id="price-title">Цена, срок, гарантия</h2>
           <div class="source-list">
@@ -125,8 +141,10 @@
 <div class="rate"><span class="what">Минимальный заказ на мытье окон</span><span class="price">5500 рублей.</span><span class="when"></span></div></article>
           </div>
         </div>
-      </section>
-      <section class="section action" id="Действие" aria-label="Заявка">
+      </div>
+    </section>
+    <section class="section action" id="Действие" aria-label="Заявка">
+      <div class="wrap">
         <div class="stack">
           <p class="action-title">Оставить заявку</p>
           <form class="lead-form" method="post" action="#Действие" novalidate data-goal-event="lead_submit">
@@ -157,13 +175,18 @@
             <button type="submit">Оставить заявку</button>
           </form>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   </main>
   <footer class="site-footer">
     <div class="wrap footer-inner">
-      <p>Klineto. Клининг квартир, домов и офисов в Москве и Московской области.</p>
+      <div>
+        <a class="logo" href="/"><img src="/img/mark.svg" width="28" height="28" alt="">Klineto</a>
+        <p>Klineto. Клининг квартир, домов и офисов в Москве и Московской области.</p>
+      </div>
       <nav class="nav" aria-label="Служебные страницы">
+        <a href="/uborka-kvartir">Квартиры</a>
+        <a href="/uborka-ofisov">Офисы</a>
         <a href="/privacy">Политика конфиденциальности</a>
         <a href="/cookies">Файлы cookie</a>
       </nav>

@@ -1,4 +1,39 @@
 (function () {
+  var toggle = document.querySelector(".menu-toggle");
+  var nav = document.getElementById("site-nav");
+
+  if (toggle && nav) {
+    function setOpen(open) {
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggle.setAttribute("aria-label", open ? "Закрыть меню" : "Меню");
+      document.body.classList.toggle("nav-open", open);
+    }
+
+    toggle.addEventListener("click", function () {
+      var open = toggle.getAttribute("aria-expanded") !== "true";
+      setOpen(open);
+      if (open) {
+        requestAnimationFrame(function () {
+          var first = nav.querySelector("a");
+          if (first) first.focus();
+        });
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") {
+        setOpen(false);
+        toggle.focus();
+      }
+    });
+
+    nav.addEventListener("click", function (event) {
+      if (event.target.closest("a")) {
+        setOpen(false);
+      }
+    });
+  }
+
   var form = document.querySelector(".lead-form");
   if (!form) {
     return;
