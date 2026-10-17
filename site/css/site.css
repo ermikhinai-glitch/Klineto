@@ -257,53 +257,57 @@ a {
 
 .hero-figure {
   grid-area: photo;
-  position: relative;
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) 48px;
+  align-items: center;
+  gap: 0.65rem;
   margin: 0.4rem 0 0;
-  border-radius: 24px;
-  overflow: hidden;
-  background: var(--field);
 }
 
 .hero-figure img {
   display: block;
+  grid-column: 2;
+  grid-row: 1;
   width: 100%;
   height: auto;
+  border-radius: 24px;
 }
 
-.pills {
-  position: absolute;
-  top: 1.4rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.75rem;
-  width: max-content;
-  max-width: calc(100% - 2rem);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.pills li {
-  display: flex;
-}
-
-.pills a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 64px;
-  padding: 0 1.5rem;
-  border-radius: 100px;
-  background: #fff;
-  color: #000;
+.hero-nav {
+  grid-row: 1;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #1e1e1e;
+  display: grid;
+  place-items: center;
   text-decoration: none;
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+}
+
+.hero-nav-prev {
+  grid-column: 1;
+}
+
+.hero-nav-next {
+  grid-column: 3;
+}
+
+.hero-nav::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+}
+
+.hero-nav-next::before {
+  transform: rotate(45deg);
+  margin-left: -3px;
+}
+
+.hero-nav-prev::before {
+  transform: rotate(-135deg);
+  margin-right: -3px;
 }
 
 .hero-short {
@@ -701,43 +705,16 @@ button[type="submit"],
   }
 
   .hero-figure {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    overflow: visible;
-    background: transparent;
-    border-radius: 0;
+    order: 3;
   }
 
   .hero-figure img {
     border-radius: 22px;
-    order: 2;
-  }
-
-  .pills {
-    position: static;
-    top: auto;
-    left: auto;
-    transform: none;
-    order: 1;
-    flex-direction: column;
-    width: 100%;
-    max-width: none;
-  }
-
-  .pills a {
-    background: #f3f3f3;
-    min-height: 72px;
-    width: 100%;
   }
 
   .button-wide {
     order: 4;
     min-height: 64px;
-  }
-
-  .hero-figure {
-    order: 3;
   }
 
   .prose {
