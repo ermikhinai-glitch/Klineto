@@ -97,12 +97,38 @@ a {
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.65rem;
   font-weight: 800;
   font-size: 1.45rem;
   letter-spacing: -0.03em;
   text-decoration: none;
   color: #000;
+}
+
+.logo-lockup {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 4px;
+}
+
+.logo-caption {
+  display: block;
+  background: var(--orange);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.logo-name {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
 }
 
 .menu-toggle {
