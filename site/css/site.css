@@ -192,24 +192,13 @@ a {
 
 .hero-layout {
   display: grid;
-  grid-template-columns: 1.45fr 0.8fr;
+  grid-template-columns: 1fr;
   grid-template-areas:
-    "title aside"
-    "cta cta"
-    "photo photo";
-  gap: 1.15rem 3rem;
-  align-items: end;
-}
-
-.hero-layout h1 {
-  grid-area: title;
-  margin: 0;
-  max-width: 16ch;
-  font-size: 52px;
-  font-weight: 700;
-  letter-spacing: normal;
-  line-height: 1.15;
-  color: #000;
+    "aside"
+    "cta"
+    "photo";
+  gap: 1.15rem;
+  align-items: start;
 }
 
 .accent {
@@ -218,8 +207,8 @@ a {
 
 .hero-aside {
   grid-area: aside;
-  margin: 0 0 0 auto;
-  max-width: 340px;
+  margin: 0;
+  max-width: 40rem;
 }
 
 .hero-aside p {
@@ -314,7 +303,7 @@ a {
 .hero-short {
   grid-template-columns: 1fr;
   grid-template-areas:
-    "title"
+    "aside"
     "cta"
     "photo";
 }
@@ -361,13 +350,13 @@ a {
   max-width: 46rem;
 }
 
-.prose h2 {
+.prose h1 {
   margin: 0 0 1rem;
-  font-size: 28px;
+  font-size: 46px;
   font-weight: 700;
   letter-spacing: normal;
-  line-height: 1.25;
-  color: #111;
+  line-height: 1.15;
+  color: #000;
 }
 
 .prose p {
@@ -692,9 +681,8 @@ button[type="submit"],
     gap: 1rem;
   }
 
-  .hero-layout h1 {
-    font-size: 34px;
-    max-width: none;
+  .prose h1 {
+    font-size: 32px;
   }
 
   .hero-aside {
@@ -728,14 +716,9 @@ button[type="submit"],
     grid-template-columns: 1fr;
   }
 
-  .prose h2,
   .action-title,
   .plain h1 {
     font-size: 32px;
-  }
-
-  .prose h2 {
-    font-size: 24px;
   }
 
   .prose p {
