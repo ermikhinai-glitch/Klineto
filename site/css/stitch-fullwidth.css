@@ -1,0 +1,55 @@
+/* Klineto stitch: full viewport width, no centered box */
+html, body {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+header,
+main,
+footer,
+#seo-block {
+  max-width: none !important;
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+/* Structural stitch containers that used to box the page */
+.max-w-7xl,
+.max-w-6xl,
+.max-w-5xl,
+.max-w-4xl,
+.max-w-\[1320px\],
+.max-w-\[1280px\],
+.max-w-\[1200px\],
+.max-w-\[1160px\],
+.max-w-\[1100px\] {
+  max-width: none !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+#seo-block,
+#seo-block .max-w-3xl,
+#seo-block .max-w-2xl,
+#seo-block .max-w-xl {
+  max-width: none !important;
+  width: 100% !important;
+}
+
+/* Moderate horizontal inset ~24–40px */
+:root {
+  --page-inline: clamp(1.5rem, 2.2vw, 2.5rem);
+}
+
+header > .px-gutter,
+header .px-gutter,
+main section.px-gutter,
+main section.px-6,
+main section.px-8,
+footer > div,
+#seo-block {
+  padding-left: var(--page-inline) !important;
+  padding-right: var(--page-inline) !important;
+}
