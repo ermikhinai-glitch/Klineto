@@ -57,8 +57,29 @@ html,body{overflow-x:clip;max-width:100%}
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
 Химчистка мебели в Москве и Московской области: диван, кресла и матрас чистят на объекте, без вывоза в цех. Выберите квартиру, дом или офис — или оставьте заявку.
 </p>
-<div class="flex flex-wrap items-center gap-4 pt-2">
-<a class="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-primary-container hover:bg-tertiary text-on-primary font-label-md text-label-md uppercase tracking-wider transition-all" href="#klineto-booking-form">Оставить заявку</a>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2" aria-label="Преимущества химчистки">
+<div class="bg-surface-container-low p-4 rounded-lg shadow-sm">
+<div class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">9 бар</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1">Давление экстракторов Santoemma</div>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg shadow-sm">
+<div class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">1–2 ч</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1">Принудительная сушка теплым воздухом</div>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg shadow-sm">
+<div class="font-headline-md text-headline-md font-bold text-primary tracking-tight">100%</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1">Гипоаллергенно, без хлора и запахов</div>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-4 pt-4">
+<a class="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md uppercase tracking-wider transition-all shadow-md" href="#klineto-booking-form">
+<span>Рассчитать смету на мебель</span>
+<span class="material-symbols-outlined text-[18px]" aria-hidden="true">arrow_forward</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors" href="#price-table">
+<span class="text-on-surface-variant">Базовый прайс</span>
+<span class="text-primary font-bold">от 999 ₽</span>
+</a>
 </div>
 </div>
 <div class="lg:col-span-5 relative">
@@ -113,6 +134,77 @@ html,body{overflow-x:clip;max-width:100%}
 <span class="font-body-md text-body-md text-on-surface-variant">Диваны в переговорных и кресла у рабочих столов без выноса из кабинета.</span>
 <span class="font-label-md text-label-md text-primary uppercase tracking-wider mt-auto">Подробнее</span>
 </a>
+</div>
+</div>
+</section>
+
+<section class="w-full py-20 bg-surface" id="price-table" aria-labelledby="price-title">
+<div class="w-full px-6 lg:px-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+<div>
+<span class="font-label-md text-label-md uppercase tracking-wider text-tertiary">Фиксированные прозрачные тарифы</span>
+<h2 id="price-title" class="font-headline-lg text-headline-lg text-on-surface tracking-tight mt-1">Стоимость химчистки мебели</h2>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-high px-3.5 py-1.5 rounded">
+<span class="material-symbols-outlined text-primary text-[18px]" aria-hidden="true">info</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Все налоги и выезд бригады включены в смету</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="hidden md:grid grid-cols-12 px-6 py-4 bg-surface-container font-label-sm text-label-sm uppercase tracking-wider text-secondary">
+<div class="col-span-6">Тип предмета / Обивочный материал</div>
+<div class="col-span-3">Время обработки</div>
+<div class="col-span-3 text-right">Стоимость услуги</div>
+</div>
+<div class="divide-y divide-surface-container-high">
+<div class="grid grid-cols-1 md:grid-cols-12 px-6 py-4.5 items-center gap-2 hover:bg-surface-bright transition-colors">
+<div class="col-span-6 flex flex-col">
+<span class="font-headline-sm text-sm font-semibold text-on-surface">Прямой / угловой диван (3–4 посадочных места)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Глубокая экстракция каркаса, подушек и посадочных мест</span>
+</div>
+<div class="col-span-3 font-body-sm text-body-sm text-secondary">90 – 120 минут</div>
+<div class="col-span-3 md:text-right"><span class="font-headline-sm text-headline-sm font-bold text-on-surface">от 4 490 ₽</span></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 px-6 py-4.5 items-center gap-2 hover:bg-surface-bright transition-colors">
+<div class="col-span-6 flex flex-col">
+<span class="font-headline-sm text-sm font-semibold text-on-surface">Большой модульный диван (от 5 мест / U-образный)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Очистка со снятием съемных чехлов и проработкой труднодоступных стыков</span>
+</div>
+<div class="col-span-3 font-body-sm text-body-sm text-secondary">150 – 180 минут</div>
+<div class="col-span-3 md:text-right"><span class="font-headline-sm text-headline-sm font-bold text-on-surface">от 6 990 ₽</span></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 px-6 py-4.5 items-center gap-2 hover:bg-surface-bright transition-colors">
+<div class="col-span-6 flex flex-col">
+<span class="font-headline-sm text-sm font-semibold text-on-surface">Ковер шерстяной / полушерсть / синтетика</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Промывка на месте с антистатической обработкой ворса</span>
+</div>
+<div class="col-span-3 font-body-sm text-body-sm text-secondary">20 – 30 мин / 10 м²</div>
+<div class="col-span-3 md:text-right"><span class="font-headline-sm text-headline-sm font-bold text-on-surface">от 350 ₽ <span class="text-xs text-secondary font-normal">/ м²</span></span></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 px-6 py-4.5 items-center gap-2 hover:bg-surface-bright transition-colors">
+<div class="col-span-6 flex flex-col">
+<span class="font-headline-sm text-sm font-semibold text-on-surface">Ортопедический матрас King Size (180×200 см / 200×200 см)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Двусторонняя санация, удаление ореолов, отбеливание жаккардового чехла</span>
+</div>
+<div class="col-span-3 font-body-sm text-body-sm text-secondary">60 – 80 минут</div>
+<div class="col-span-3 md:text-right"><span class="font-headline-sm text-headline-sm font-bold text-on-surface">от 2 490 ₽</span></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 px-6 py-4.5 items-center gap-2 bg-tertiary-container/5 hover:bg-tertiary-container/10 transition-colors">
+<div class="col-span-6 flex flex-col">
+<span class="font-headline-sm text-sm font-semibold text-tertiary">Минимальный выезд технолога с экстрактором Santoemma</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Включает диагностику, подбор химии и устранение локальных загрязнений</span>
+</div>
+<div class="col-span-3 font-body-sm text-body-sm text-secondary">Фикс. ставка</div>
+<div class="col-span-3 md:text-right"><span class="font-headline-sm text-headline-sm font-bold text-primary">от 999 ₽</span></div>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-4 mt-6 p-4 bg-surface-container rounded-lg">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[20px]" aria-hidden="true">thumb_up</span>
+<span class="font-body-sm text-body-sm">Точная смета формируется до начала работ и фиксируется в акте наряда. Никаких доплат на объекте.</span>
+</div>
+<a class="font-label-sm text-label-sm font-semibold uppercase tracking-wider text-tertiary hover:underline" href="#klineto-booking-form">Рассчитать смету →</a>
 </div>
 </div>
 </section>
