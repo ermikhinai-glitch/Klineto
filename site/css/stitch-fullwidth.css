@@ -149,3 +149,16 @@ form button[type="submit"] {
   padding-bottom: 0 !important;
   line-height: 1.25 !important;
 }
+
+/* Hero CTA pair (not home): shared 48px height */
+main a.inline-flex.h-12 {
+  height: 3rem !important;
+  min-height: 3rem !important;
+  box-sizing: border-box;
+}
+
+/* Lead split: equal column height */
+main .grid.items-stretch > .lg\:col-span-5,
+main .grid.items-stretch > .lg\:col-span-7 {
+  height: 100%;
+}
