@@ -24,8 +24,8 @@
 </div>
 <h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mt-1">Интерактивный конфигуратор сметы и онлайн-бронирование</h1>
 <p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
-          Прозрачный расчет с точностью до рубля без скрытых наценок на месте. Включает страховку объекта на 10 млн ₽, премиальную химию Kiehl и выезд супервайзера контроля качества.
-        </p>
+ Прозрачный расчет с точностью до рубля без скрытых наценок на месте. Включает страховку объекта на 10 млн ₽, профессиональную химию Kiehl и выезд супервайзера контроля качества.
+ </p>
 </div>
 <div class="flex items-center gap-space-sm bg-surface-container-low px-space-md py-space-sm rounded-xl shrink-0">
 <div class="w-2.5 h-2.5 rounded-full bg-primary-container animate-ping"></div>
@@ -215,7 +215,7 @@
 <div class="flex items-center justify-between">
 <div class="flex items-center gap-space-sm">
 <span class="w-6 h-6 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm flex items-center justify-center font-bold">04</span>
-<h2 class="font-headline-sm text-headline-sm text-on-surface">Премиальные опции</h2>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Дополнительные опции</h2>
 </div>
 <span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Шаг 4 из 5</span>
 </div>
@@ -436,172 +436,172 @@
 </div>
 <!-- Inline Calculator Micro-logic -->
 <script>
-    (function initCalculator() {
-      const areaInput = document.getElementById('area-input');
-      const areaRange = document.getElementById('area-range');
-      const finalPriceEl = document.getElementById('final-price');
-      const estTimeEl = document.getElementById('est-time');
-      const crewSizeEl = document.getElementById('crew-size');
+ (function initCalculator() {
+ const areaInput = document.getElementById('area-input');
+ const areaRange = document.getElementById('area-range');
+ const finalPriceEl = document.getElementById('final-price');
+ const estTimeEl = document.getElementById('est-time');
+ const crewSizeEl = document.getElementById('crew-size');
 
-      // Counters
-      const bathVal = document.getElementById('bath-val');
-      const roomVal = document.getElementById('room-val');
-      const windowVal = document.getElementById('window-val');
+ // Counters
+ const bathVal = document.getElementById('bath-val');
+ const roomVal = document.getElementById('room-val');
+ const windowVal = document.getElementById('window-val');
 
-      let state = {
-        propType: 'flat',
-        area: 75,
-        bathrooms: 1,
-        rooms: 2,
-        windows: 0,
-        cleaningType: 'general',
-        addonsSum: 1200 // fridge default checked
-      };
+ let state = {
+ propType: 'flat',
+ area: 75,
+ bathrooms: 1,
+ rooms: 2,
+ windows: 0,
+ cleaningType: 'general',
+ addonsSum: 1200 // fridge default checked
+ };
 
-      const baseRates = {
-        supportive: 45,
-        general: 75,
-        renovation: 110,
-        eco: 95
-      };
+ const baseRates = {
+ supportive: 45,
+ general: 75,
+ renovation: 110,
+ eco: 95
+ };
 
-      function calculate() {
-        const rate = baseRates[state.cleaningType] || 75;
-        let baseCost = state.area * rate;
+ function calculate() {
+ const rate = baseRates[state.cleaningType] || 75;
+ let baseCost = state.area * rate;
 
-        // Additional rooms / baths influence
-        baseCost += (state.bathrooms - 1) * 800;
-        baseCost += (state.rooms - 1) * 500;
-        baseCost += state.windows * 600;
+ // Additional rooms / baths influence
+ baseCost += (state.bathrooms - 1) * 800;
+ baseCost += (state.rooms - 1) * 500;
+ baseCost += state.windows * 600;
 
-        // Addons
-        let total = baseCost + state.addonsSum;
+ // Addons
+ let total = baseCost + state.addonsSum;
 
-        // Minimum floor
-        if (state.cleaningType === 'supportive' && total < 1990) total = 1990;
-        if (state.cleaningType === 'general' && total < 3500) total = 3500;
-        if (state.cleaningType === 'renovation' && total < 5900) total = 5900;
-        if (state.cleaningType === 'eco' && total < 4800) total = 4800;
+ // Minimum floor
+ if (state.cleaningType === 'supportive' && total < 1990) total = 1990;
+ if (state.cleaningType === 'general' && total < 3500) total = 3500;
+ if (state.cleaningType === 'renovation' && total < 5900) total = 5900;
+ if (state.cleaningType === 'eco' && total < 4800) total = 4800;
 
-        // 10% promo applied
-        const discountedTotal = Math.round(total * 0.9 / 100) * 100;
+ // 10% promo applied
+ const discountedTotal = Math.round(total * 0.9 / 100) * 100;
 
-        // Estimate time & crew
-        let hours = 3.0 + (state.area / 45);
-        let cleaners = state.area > 140 ? 3 : (state.area > 70 ? 2 : 1);
-        if (state.cleaningType === 'renovation') {
-          cleaners += 1;
-          hours += 1.5;
-        }
+ // Estimate time & crew
+ let hours = 3.0 + (state.area / 45);
+ let cleaners = state.area > 140 ? 3 : (state.area > 70 ? 2 : 1);
+ if (state.cleaningType === 'renovation') {
+ cleaners += 1;
+ hours += 1.5;
+ }
 
-        finalPriceEl.textContent = discountedTotal.toLocaleString('ru-RU') + ' ₽';
-        estTimeEl.textContent = '~ ' + hours.toFixed(1) + ' часа';
-        crewSizeEl.textContent = cleaners + ' клинера + супервайзер';
-      }
+ finalPriceEl.textContent = discountedTotal.toLocaleString('ru-RU') + ' ₽';
+ estTimeEl.textContent = '~ ' + hours.toFixed(1) + ' часа';
+ crewSizeEl.textContent = cleaners + ' клинера + супервайзер';
+ }
 
-      // Sync slider & direct input
-      areaRange.addEventListener('input', (e) => {
-        state.area = parseInt(e.target.value, 10);
-        areaInput.value = state.area;
-        calculate();
-      });
+ // Sync slider & direct input
+ areaRange.addEventListener('input', (e) => {
+ state.area = parseInt(e.target.value, 10);
+ areaInput.value = state.area;
+ calculate();
+ });
 
-      areaInput.addEventListener('change', (e) => {
-        let val = parseInt(e.target.value, 10);
-        if (isNaN(val) || val < 30) val = 30;
-        if (val > 1000) val = 1000;
-        state.area = val;
-        areaInput.value = val;
-        areaRange.value = Math.min(val, 600);
-        calculate();
-      });
+ areaInput.addEventListener('change', (e) => {
+ let val = parseInt(e.target.value, 10);
+ if (isNaN(val) || val < 30) val = 30;
+ if (val > 1000) val = 1000;
+ state.area = val;
+ areaInput.value = val;
+ areaRange.value = Math.min(val, 600);
+ calculate();
+ });
 
-      // Property type switch
-      document.querySelectorAll('.prop-tab-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          document.querySelectorAll('.prop-tab-btn').forEach(b => {
-            b.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm');
-            b.classList.add('text-on-surface-variant');
-          });
-          btn.classList.add('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm');
-          btn.classList.remove('text-on-surface-variant');
-          state.propType = btn.getAttribute('data-prop');
-          calculate();
-        });
-      });
+ // Property type switch
+ document.querySelectorAll('.prop-tab-btn').forEach(btn => {
+ btn.addEventListener('click', () => {
+ document.querySelectorAll('.prop-tab-btn').forEach(b => {
+ b.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm');
+ b.classList.add('text-on-surface-variant');
+ });
+ btn.classList.add('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm');
+ btn.classList.remove('text-on-surface-variant');
+ state.propType = btn.getAttribute('data-prop');
+ calculate();
+ });
+ });
 
-      // Counter actions
-      function bindCounter(minusId, plusId, displayEl, stateKey, minVal = 0) {
-        document.getElementById(minusId).addEventListener('click', () => {
-          if (state[stateKey] > minVal) {
-            state[stateKey]--;
-            displayEl.textContent = state[stateKey];
-            calculate();
-          }
-        });
-        document.getElementById(plusId).addEventListener('click', () => {
-          state[stateKey]++;
-          displayEl.textContent = state[stateKey];
-          calculate();
-        });
-      }
+ // Counter actions
+ function bindCounter(minusId, plusId, displayEl, stateKey, minVal = 0) {
+ document.getElementById(minusId).addEventListener('click', () => {
+ if (state[stateKey] > minVal) {
+ state[stateKey]--;
+ displayEl.textContent = state[stateKey];
+ calculate();
+ }
+ });
+ document.getElementById(plusId).addEventListener('click', () => {
+ state[stateKey]++;
+ displayEl.textContent = state[stateKey];
+ calculate();
+ });
+ }
 
-      bindCounter('bath-minus', 'bath-plus', bathVal, 'bathrooms', 1);
-      bindCounter('room-minus', 'room-plus', roomVal, 'rooms', 1);
-      bindCounter('window-minus', 'window-plus', windowVal, 'windows', 0);
+ bindCounter('bath-minus', 'bath-plus', bathVal, 'bathrooms', 1);
+ bindCounter('room-minus', 'room-plus', roomVal, 'rooms', 1);
+ bindCounter('window-minus', 'window-plus', windowVal, 'windows', 0);
 
-      // Cleaning type radios
-      document.querySelectorAll('input[name="clean-type"]').forEach(radio => {
-        radio.addEventListener('change', (e) => {
-          state.cleaningType = e.target.value;
-          document.querySelectorAll('#cleaning-types label').forEach(lbl => {
-            lbl.classList.remove('ring-2', 'ring-primary', 'bg-surface-container');
-            lbl.classList.add('bg-surface-container-low');
-            const ind = lbl.querySelector('.type-check-indicator');
-            if (ind) {
-              ind.classList.remove('bg-primary');
-              ind.classList.add('bg-surface-container-high');
-              ind.innerHTML = '';
-            }
-          });
-          const parent = e.target.closest('label');
-          parent.classList.remove('bg-surface-container-low');
-          parent.classList.add('ring-2', 'ring-primary', 'bg-surface-container');
-          const ind = parent.querySelector('.type-check-indicator');
-          if (ind) {
-            ind.classList.add('bg-primary');
-            ind.classList.remove('bg-surface-container-high');
-            ind.innerHTML = '<span class="material-symbols-outlined text-[14px]">check</span>';
-          }
-          calculate();
-        });
-      });
+ // Cleaning type radios
+ document.querySelectorAll('input[name="clean-type"]').forEach(radio => {
+ radio.addEventListener('change', (e) => {
+ state.cleaningType = e.target.value;
+ document.querySelectorAll('#cleaning-types label').forEach(lbl => {
+ lbl.classList.remove('ring-2', 'ring-primary', 'bg-surface-container');
+ lbl.classList.add('bg-surface-container-low');
+ const ind = lbl.querySelector('.type-check-indicator');
+ if (ind) {
+ ind.classList.remove('bg-primary');
+ ind.classList.add('bg-surface-container-high');
+ ind.innerHTML = '';
+ }
+ });
+ const parent = e.target.closest('label');
+ parent.classList.remove('bg-surface-container-low');
+ parent.classList.add('ring-2', 'ring-primary', 'bg-surface-container');
+ const ind = parent.querySelector('.type-check-indicator');
+ if (ind) {
+ ind.classList.add('bg-primary');
+ ind.classList.remove('bg-surface-container-high');
+ ind.innerHTML = '<span class="material-symbols-outlined text-[14px]">check</span>';
+ }
+ calculate();
+ });
+ });
 
-      // Addons checkboxes
-      document.querySelectorAll('.addon-checkbox').forEach(chk => {
-        chk.addEventListener('change', () => {
-          let sum = 0;
-          document.querySelectorAll('.addon-checkbox:checked').forEach(c => {
-            sum += parseInt(c.getAttribute('data-price'), 10);
-          });
-          state.addonsSum = sum;
-          calculate();
-        });
-      });
+ // Addons checkboxes
+ document.querySelectorAll('.addon-checkbox').forEach(chk => {
+ chk.addEventListener('change', () => {
+ let sum = 0;
+ document.querySelectorAll('.addon-checkbox:checked').forEach(c => {
+ sum += parseInt(c.getAttribute('data-price'), 10);
+ });
+ state.addonsSum = sum;
+ calculate();
+ });
+ });
 
-      // Time slot selection
-      document.querySelectorAll('.time-slot-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          document.querySelectorAll('.time-slot-btn').forEach(b => {
-            b.classList.remove('ring-2', 'ring-primary', 'bg-surface-container', 'shadow-sm');
-            b.classList.add('bg-surface-container-low');
-          });
-          btn.classList.add('ring-2', 'ring-primary', 'bg-surface-container', 'shadow-sm');
-          btn.classList.remove('bg-surface-container-low');
-        });
-      });
+ // Time slot selection
+ document.querySelectorAll('.time-slot-btn').forEach(btn => {
+ btn.addEventListener('click', () => {
+ document.querySelectorAll('.time-slot-btn').forEach(b => {
+ b.classList.remove('ring-2', 'ring-primary', 'bg-surface-container', 'shadow-sm');
+ b.classList.add('bg-surface-container-low');
+ });
+ btn.classList.add('ring-2', 'ring-primary', 'bg-surface-container', 'shadow-sm');
+ btn.classList.remove('bg-surface-container-low');
+ });
+ });
 
-      calculate();
-    })();
-  </script>
-</div></main><footer class="w-full bg-surface-container-low mt-space-xl"><div class="w-full px-gutter py-space-xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-xl pb-space-xl"><div class="lg:col-span-2 flex flex-col gap-space-md"><div class="flex flex-col"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface">KLINETO</span><span class="font-label-sm text-label-sm tracking-widest text-outline -mt-1">Клининг это Клинето!</span></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">Премиальная экосистема клининга жилой и коммерческой недвижимости в Москве. Архитектурная чистота, абсолютная конфиденциальность и сертифицированные протоколы гигиены.</p><div class="inline-flex items-center gap-space-sm px-space-md py-space-xs rounded-lg bg-surface-container-high w-fit"><span class="material-symbols-outlined text-tertiary text-[20px]">verified_user</span><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface">Сертификация Swiss Clean Standard</span></div><div class="font-body-sm text-body-sm text-on-surface-variant"><p class="font-label-md text-label-md text-on-surface font-semibold">ООО «КЛИНЕТО СЕРВИС»</p><p>ОГРН 1237700000000 • ИНН 7700000000</p></div></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md uppercase tracking-wider text-on-surface">Частным лицам</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="kvartiry" href="/uborka-kvartir">Квартиры и пентхаусы</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="doma-i-kottedzhi" href="/uborka-domov">Загородные дома и коттеджи</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="khimchistka" href="/himchistka-mebeli">Премиальная химчистка</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="vip-obsluzhivanie" href="/uborka-domov/kottedzhi">VIP-обслуживание</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md uppercase tracking-wider text-on-surface">Бизнесу</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="ofisy" href="/uborka-ofisov">Офисы класса A/B+</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="korporativnym-klientam" href="/korporativnym">Корпоративный клининг</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="poslestroitelny-klining" href="/uborka-ofisov/posle-remonta">Послестроительный клининг</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="fasady-i-osteklenie" href="/uborka-domov/mojka-okon">Фасады и витражи</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md uppercase tracking-wider text-on-surface">Связь и сервис</span><a class="font-body-sm text-body-sm text-on-surface font-semibold hover:text-primary transition-colors" href="tel:+74950000000">+7 495 000-00-00</a><a class="font-body-sm text-body-sm text-on-surface font-semibold hover:text-primary transition-colors" href="tel:+79250000000">+7 925 000-00-00</a><span class="font-body-sm text-body-sm text-on-surface-variant">Москва, Пресненская наб., 12</span><div class="flex items-center gap-space-sm pt-space-xs"><a class="px-space-sm py-space-xs bg-surface-container rounded-lg font-label-sm text-label-sm text-on-surface uppercase hover:bg-surface-container-high transition-colors" href="#">Telegram</a><a class="px-space-sm py-space-xs bg-surface-container rounded-lg font-label-sm text-label-sm text-on-surface uppercase hover:bg-surface-container-high transition-colors" href="#">WhatsApp</a></div></div></div><div class="pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md text-on-surface-variant font-label-sm text-label-sm"><p>© 2025 ООО «КЛИНЕТО СЕРВИС». Все права защищены.</p><div class="flex items-center gap-space-lg flex-wrap"><a class="hover:text-on-surface transition-colors" data-path="politika-konfidentsialnosti" href="/privacy">Политика конфиденциальности</a><a class="hover:text-on-surface transition-colors" data-path="polzovatelskoe-soglashenie" href="/privacy">Пользовательское соглашение</a><a class="hover:text-on-surface transition-colors" data-path="reglament-kachestva" href="/o-kompanii">Регламент качества</a></div></div></div></footer><script src="/js/form.js" defer></script></body></html>
+ calculate();
+ })();
+ </script>
+</div></main><footer class="w-full bg-surface-container-low mt-space-xl"><div class="w-full px-gutter py-space-xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-xl pb-space-xl"><div class="lg:col-span-2 flex flex-col gap-space-md"><div class="flex flex-col"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface">KLINETO</span><span class="font-label-sm text-label-sm tracking-widest text-outline -mt-1">Клининг это Клинето!</span></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">Клининг жилой и коммерческой недвижимости в Москве. Архитектурная чистота, абсолютная конфиденциальность и сертифицированные протоколы гигиены.</p><div class="inline-flex items-center gap-space-sm px-space-md py-space-xs rounded-lg bg-surface-container-high w-fit"><span class="material-symbols-outlined text-tertiary text-[20px]">verified_user</span><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface">Сертификация Swiss Clean Standard</span></div><div class="font-body-sm text-body-sm text-on-surface-variant"><p class="font-label-md text-label-md text-on-surface font-semibold">ООО «КЛИНЕТО СЕРВИС»</p><p>ОГРН 1237700000000 • ИНН 7700000000</p></div></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md uppercase tracking-wider text-on-surface">Частным лицам</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="kvartiry" href="/uborka-kvartir">Квартиры и пентхаусы</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="doma-i-kottedzhi" href="/uborka-domov">Загородные дома и коттеджи</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="khimchistka" href="/himchistka-mebeli">Химчистка</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="vip-obsluzhivanie" href="/uborka-domov/kottedzhi">VIP-обслуживание</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md uppercase tracking-wider text-on-surface">Бизнесу</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="ofisy" href="/uborka-ofisov">Офисы класса A/B+</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="korporativnym-klientam" href="/korporativnym">Корпоративный клининг</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="poslestroitelny-klining" href="/uborka-ofisov/posle-remonta">Послестроительный клининг</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="fasady-i-osteklenie" href="/uborka-domov/mojka-okon">Фасады и витражи</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md uppercase tracking-wider text-on-surface">Связь и сервис</span><a class="font-body-sm text-body-sm text-on-surface font-semibold hover:text-primary transition-colors" href="tel:+74950000000">+7 495 000-00-00</a><a class="font-body-sm text-body-sm text-on-surface font-semibold hover:text-primary transition-colors" href="tel:+79250000000">+7 925 000-00-00</a><span class="font-body-sm text-body-sm text-on-surface-variant">Москва, Пресненская наб., 12</span><div class="flex items-center gap-space-sm pt-space-xs"><a class="px-space-sm py-space-xs bg-surface-container rounded-lg font-label-sm text-label-sm text-on-surface uppercase hover:bg-surface-container-high transition-colors" href="#">Telegram</a><a class="px-space-sm py-space-xs bg-surface-container rounded-lg font-label-sm text-label-sm text-on-surface uppercase hover:bg-surface-container-high transition-colors" href="#">WhatsApp</a></div></div></div><div class="pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md text-on-surface-variant font-label-sm text-label-sm"><p>© 2025 ООО «КЛИНЕТО СЕРВИС». Все права защищены.</p><div class="flex items-center gap-space-lg flex-wrap"><a class="hover:text-on-surface transition-colors" data-path="politika-konfidentsialnosti" href="/privacy">Политика конфиденциальности</a><a class="hover:text-on-surface transition-colors" data-path="polzovatelskoe-soglashenie" href="/privacy">Пользовательское соглашение</a><a class="hover:text-on-surface transition-colors" data-path="reglament-kachestva" href="/o-kompanii">Регламент качества</a></div></div></div></footer><script src="/js/form.js" defer></script></body></html>
