@@ -86,5 +86,57 @@
     });
   }
 
+  function bindJobForm(form) {
+    var error = form.querySelector(".form-error");
+    var success = form.querySelector(".form-success");
+    var nameField = form.querySelector('[name="name"]');
+    var phoneField = form.querySelector('[name="phone"]');
+    var requiredFields = [nameField, phoneField].filter(Boolean);
+
+    if (!error || !success || requiredFields.length < 2) {
+      return;
+    }
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      var missing = requiredFields.filter(function (field) {
+        var empty = field.value.trim() === "";
+        field.setAttribute("aria-invalid", empty ? "true" : "false");
+        return empty;
+      });
+
+      if (missing.length) {
+        success.hidden = true;
+        error.hidden = false;
+        error.textContent = "Заполните имя и телефон.";
+        missing[0].focus();
+        return;
+      }
+
+      var phoneDigits = (phoneField.value.match(/\d/g) || []).length;
+      var phoneHasLetters = /[^\d\s()+\-]/.test(phoneField.value);
+      if (phoneDigits < 10 || phoneHasLetters) {
+        phoneField.setAttribute("aria-invalid", "true");
+        success.hidden = true;
+        error.hidden = false;
+        error.textContent = "Проверьте телефон: в номере нужно не меньше 10 цифр.";
+        phoneField.focus();
+        return;
+      }
+
+      error.hidden = true;
+      success.hidden = false;
+      success.textContent = "Отклик принят.";
+      form.setAttribute("data-goal-state", form.getAttribute("data-goal-event") || "");
+      form.reset();
+      requiredFields.forEach(function (field) {
+        field.setAttribute("aria-invalid", "false");
+      });
+      success.focus();
+    });
+  }
+
   document.querySelectorAll("form.lead-form").forEach(bindLeadForm);
+  document.querySelectorAll("form.job-form").forEach(bindJobForm);
 })();
