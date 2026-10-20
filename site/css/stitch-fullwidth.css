@@ -6,7 +6,8 @@ html, body {
 }
 
 :root {
-  --page-inline: clamp(1.5rem, 2.2vw, 2.5rem); /* ~24–40px; ~32px @1440 */
+  /* Exact shared content edge — same value for header logo and main shells */
+  --page-inline: 32px;
   --form-control-h: 3rem;
 }
 
