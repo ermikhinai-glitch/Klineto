@@ -1,4 +1,4 @@
-/* Klineto stitch: full width + shared content inset + form control heights */
+/* Klineto stitch: one shared content edge + form control heights */
 html, body {
   width: 100%;
   max-width: none;
@@ -6,9 +6,8 @@ html, body {
 }
 
 :root {
-  /* ~24–40px, same line for header / SEO / sections / forms */
   --page-inline: clamp(1.5rem, 2.2vw, 2.5rem);
-  --form-control-h: 3rem; /* match Tailwind h-12 fields */
+  --form-control-h: 3rem;
 }
 
 header,
@@ -28,82 +27,70 @@ footer,
 .max-w-\[1280px\],
 .max-w-\[1200px\],
 .max-w-\[1160px\],
-.max-w-\[1100px\] {
+.max-w-\[1100px\],
+#seo-block .max-w-3xl,
+#seo-block .max-w-2xl,
+#seo-block .max-w-xl {
   max-width: none !important;
   width: 100% !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
 
-#seo-block .max-w-3xl,
-#seo-block .max-w-2xl,
-#seo-block .max-w-xl {
-  max-width: none !important;
-  width: 100% !important;
-}
-
-/* --- Unified left/right content edge --- */
-/* Header bars */
+/*
+ * ONE horizontal inset for header bars, main sections, SEO, footer.
+ * Apply only on the outer shell; kill nested px-* so nothing double-pads.
+ */
 header > div,
-header > div > div.w-full,
-header .h-9,
-header .h-10,
-header .h-20 {
-  padding-left: var(--page-inline) !important;
-  padding-right: var(--page-inline) !important;
-  box-sizing: border-box;
-}
-
-/* Avoid double padding if nested w-full also got px-* */
-header > div > div.w-full.px-gutter,
-header > div > div.w-full.px-6,
-header > div.px-gutter > div.w-full,
-header > div.px-6 > div.w-full {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
-/* Main sections: one inset on the section itself */
 main > .flex.flex-col > section,
 main > div.flex.flex-col > section,
 main > section,
-#seo-block {
-  padding-left: var(--page-inline) !important;
-  padding-right: var(--page-inline) !important;
-  box-sizing: border-box;
-}
-
-/* Nested first wrappers that used to carry their own px-* — neutralize horizontal pad */
-main > .flex.flex-col > section > .px-gutter,
-main > .flex.flex-col > section > .px-6,
-main > .flex.flex-col > section > .px-8,
-main > .flex.flex-col > section > .px-10,
-main > .flex.flex-col > section > .w-full.px-gutter,
-main > .flex.flex-col > section > .w-full.px-6,
-main > .flex.flex-col > section > .w-full.px-8,
-main > .flex.flex-col > section > [class*="px-6"],
-main > .flex.flex-col > section > [class*="px-gutter"],
-main > .flex.flex-col > section > [class*="lg:px-"],
-main > div.flex.flex-col > section > .px-gutter,
-main > div.flex.flex-col > section > .px-6,
-main > div.flex.flex-col > section > .px-8,
-main > div.flex.flex-col > section > .w-full.px-gutter,
-main > div.flex.flex-col > section > .w-full.px-6,
-main > div.flex.flex-col > section > [class*="px-6"],
-main > div.flex.flex-col > section > [class*="px-gutter"],
-main > div.flex.flex-col > section > [class*="lg:px-"],
-#seo-block > div {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
+#seo-block,
 footer > div {
   padding-left: var(--page-inline) !important;
   padding-right: var(--page-inline) !important;
   box-sizing: border-box;
 }
 
-/* --- Form controls: submit = Name/Phone height --- */
+/* Nested full-width rows inside header must not add a second inset */
+header > div > .w-full,
+header > div > .h-9,
+header > div > .h-10,
+header > div > .h-20,
+header .h-9,
+header .h-10,
+header .h-20 {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Nested first wrappers inside main sections / SEO */
+main > .flex.flex-col > section > .w-full,
+main > .flex.flex-col > section > .px-gutter,
+main > .flex.flex-col > section > .px-6,
+main > .flex.flex-col > section > .px-8,
+main > .flex.flex-col > section > .px-10,
+main > .flex.flex-col > section > [class*="px-6"],
+main > .flex.flex-col > section > [class*="px-gutter"],
+main > .flex.flex-col > section > [class*="lg:px-"],
+main > div.flex.flex-col > section > .w-full,
+main > div.flex.flex-col > section > .px-gutter,
+main > div.flex.flex-col > section > .px-6,
+main > div.flex.flex-col > section > .px-8,
+main > div.flex.flex-col > section > .px-10,
+main > div.flex.flex-col > section > [class*="px-6"],
+main > div.flex.flex-col > section > [class*="px-gutter"],
+main > div.flex.flex-col > section > [class*="lg:px-"],
+main > section > .w-full,
+main > section > .px-gutter,
+main > section > .px-6,
+#seo-block > div,
+#seo-block > .w-full {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Forms: submit height = Name/Phone */
 form.lead-form input[type="text"],
 form.lead-form input[type="tel"],
 form.lead-form input:not([type]),
