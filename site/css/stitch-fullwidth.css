@@ -6,7 +6,7 @@ html, body {
 }
 
 :root {
-  --page-inline: clamp(1.5rem, 2.2vw, 2.5rem);
+  --page-inline: clamp(1.5rem, 2.2vw, 2.5rem); /* ~24–40px; ~32px @1440 */
   --form-control-h: 3rem;
 }
 
@@ -38,12 +38,14 @@ footer,
 }
 
 /*
- * ONE horizontal inset for header bars, main sections, SEO, footer.
- * Apply only on the outer shell; kill nested px-* so nothing double-pads.
+ * ONE horizontal inset for header bars, main shells, SEO, footer.
+ * Shells: header > div; main flex-col > section|div; footer > div.
  */
 header > div,
 main > .flex.flex-col > section,
+main > .flex.flex-col > div,
 main > div.flex.flex-col > section,
+main > div.flex.flex-col > div,
 main > section,
 #seo-block,
 footer > div {
@@ -52,19 +54,39 @@ footer > div {
   box-sizing: border-box;
 }
 
-/* Nested full-width rows inside header must not add a second inset */
-header > div > .w-full,
-header > div > .h-9,
-header > div > .h-10,
-header > div > .h-20,
-header .h-9,
-header .h-10,
-header .h-20 {
+/* Scripts/styles inside the flex column must not get content padding */
+main > .flex.flex-col > script,
+main > .flex.flex-col > style,
+main > div.flex.flex-col > script,
+main > div.flex.flex-col > style {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
 
-/* Nested first wrappers inside main sections / SEO */
+/*
+ * Nested full-width rows inside an already-padded header shell.
+ * Do NOT zero .h-20 when it IS the shell (direct header > div.h-20).
+ */
+header > div > .w-full,
+header > div > .h-9,
+header > div > .h-10,
+header > div > .h-20,
+header > div > div.h-9,
+header > div > div.h-10,
+header > div > div.h-20 {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Direct logo/nav bar: keep the shared inset */
+header > div.h-9,
+header > div.h-10,
+header > div.h-20 {
+  padding-left: var(--page-inline) !important;
+  padding-right: var(--page-inline) !important;
+}
+
+/* Nested first wrappers inside main shells / SEO — kill second inset */
 main > .flex.flex-col > section > .w-full,
 main > .flex.flex-col > section > .px-gutter,
 main > .flex.flex-col > section > .px-6,
@@ -73,6 +95,12 @@ main > .flex.flex-col > section > .px-10,
 main > .flex.flex-col > section > [class*="px-6"],
 main > .flex.flex-col > section > [class*="px-gutter"],
 main > .flex.flex-col > section > [class*="lg:px-"],
+main > .flex.flex-col > div > .w-full,
+main > .flex.flex-col > div > .px-gutter,
+main > .flex.flex-col > div > .px-6,
+main > .flex.flex-col > div > [class*="px-6"],
+main > .flex.flex-col > div > [class*="px-gutter"],
+main > .flex.flex-col > div > [class*="lg:px-"],
 main > div.flex.flex-col > section > .w-full,
 main > div.flex.flex-col > section > .px-gutter,
 main > div.flex.flex-col > section > .px-6,
@@ -81,6 +109,12 @@ main > div.flex.flex-col > section > .px-10,
 main > div.flex.flex-col > section > [class*="px-6"],
 main > div.flex.flex-col > section > [class*="px-gutter"],
 main > div.flex.flex-col > section > [class*="lg:px-"],
+main > div.flex.flex-col > div > .w-full,
+main > div.flex.flex-col > div > .px-gutter,
+main > div.flex.flex-col > div > .px-6,
+main > div.flex.flex-col > div > [class*="px-6"],
+main > div.flex.flex-col > div > [class*="px-gutter"],
+main > div.flex.flex-col > div > [class*="lg:px-"],
 main > section > .w-full,
 main > section > .px-gutter,
 main > section > .px-6,
