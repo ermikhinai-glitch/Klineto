@@ -1,99 +1,886 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
- <meta charset="utf-8">
- <meta name="viewport" content="width=device-width, initial-scale=1">
- <title>Поддерживающая уборка в Москве — Klineto</title>
- <meta name="description" content="Оставьте заявку на поддерживающую уборку в Москве и Московской области.">
- <meta name="robots" content="index, follow">
- <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
- <link rel="stylesheet" href="/css/site.css">
- <script type="application/ld+json">
- {
- "@context": "https://schema.org",
- "@type": "Service",
- "name": "Поддерживающая уборка в Москве",
- "serviceType": "Поддерживающая уборка",
- "url": "https://klineto.ru/podderzhivayushchaya-uborka",
- "provider": {
- "@type": "Organization",
- "name": "Klineto",
- "url": "https://klineto.ru/"
- },
- "areaServed": ["Москва", "Московская область"]
- }
- </script>
-</head>
-<body>
- <a class="skip" href="#content">К содержанию</a>
- <header class="site-header">
- <div class="wrap header-inner">
- <a class="logo" href="/"><img class="logo-mark" src="/img/mark.svg" width="36" height="36" alt=""><span class="logo-slogan">Клининг это - Klineto</span></a>
- <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Меню"><span class="menu-bars"></span></button>
- <nav class="nav" id="site-nav" aria-label="Разделы">
- <a href="/uborka-kvartir">Квартиры</a>
- <a href="/uborka-domov">Дома</a>
- <a href="/uborka-ofisov">Офисы</a>
- </nav>
- </div>
- </header>
- <main id="content">
- <section class="section hero" id="Экран">
- <div class="wrap hero-layout">
- <figure class="hero-figure">
- <img src="/img/hero-support.jpg" width="1280" height="720" alt="Поддерживающая уборка комнаты" fetchpriority="high">
- <a class="hero-nav hero-nav-prev" href="/uborka-posle-remonta" aria-label="Уборка после ремонта"></a>
- <a class="hero-nav hero-nav-next" href="/regulyarnaya-uborka" aria-label="Регулярная уборка"></a>
- </figure>
- </div>
- </section>
- <section class="section prose" id="Основное" aria-labelledby="page-title">
- <div class="wrap">
- <div class="stack">
- <h1 id="page-title">Поддерживающая уборка <span class="accent">в Москве</span></h1>
- <p>Это разовый визит, чтобы поддержать уже наведённый порядок. Выберите квартиру, дом или офис и напишите, что сделать в этот раз.</p>
- <p>Для графика на несколько визитов откройте регулярную или ежедневную уборку.</p>
- <a class="button button-wide" href="#Действие">Оставить заявку</a>
- </div>
- </div>
- </section>
- <section class="section action" id="Действие" aria-label="Заявка">
- <div class="wrap">
- <div class="action-layout">
- <aside class="hero-aside">
- <img class="pin" src="/img/pin.svg" width="18" height="18" alt="">
- <p>Оставьте заявку на поддерживающую уборку в Москве и Московской области.</p>
- </aside>
- <div class="stack">
- <p class="action-title">Оставить заявку</p>
- <form class="lead-form" method="post" action="#Действие" novalidate data-goal-event="lead_submit">
- <div class="field">
- <label for="name">Имя</label>
- <input id="name" name="name" type="text" autocomplete="name">
- </div>
- <div class="field">
- <label for="phone">Телефон</label>
- <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel">
- </div>
- <div class="field">
- <label for="object-type">Тип объекта</label>
- <select id="object-type" name="object-type">
- <option value="">Выберите тип</option>
- <option>Квартира</option>
- <option>Дом</option>
- <option>Офис</option>
- <option>Коммерческое помещение</option>
- </select>
- </div>
- <div class="field">
- <label for="comment">Комментарий</label>
- <textarea id="comment" name="comment" rows="4"></textarea>
- </div>
- <p class="form-error" role="alert" hidden></p>
- <p class="form-success" role="status" tabindex="-1" hidden></p>
- <button type="submit">Оставить заявку</button>
- </form>
- </div>
- </div>
- </div>
- </section>
+
+<html lang="ru"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Klineto — Премиальный клининг в Москве и МО</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-surface": "#1a1c1b", "on-background": "#1a1c1b", "surface-container-high": "#e8e8e6", "tertiary": "#186340", "on-error": "#ffffff", "inverse-on-surface": "#f1f1ef", "secondary-container": "#e3e2e6", "surface-container-highest": "#e2e3e1", "surface-container-low": "#f4f4f2", "primary": "#00652c", "primary-fixed-dim": "#79db8d", "inverse-primary": "#79db8d", "on-tertiary-fixed": "#002111", "primary-fixed": "#95f8a7", "on-surface-variant": "#3f493f", "tertiary-container": "#357c57", "inverse-surface": "#2f3130", "secondary-fixed-dim": "#c7c6ca", "surface": "#f9f9f7", "surface-tint": "#006d30", "on-primary-fixed": "#00210a", "surface-container-lowest": "#ffffff", "tertiary-fixed": "#a9f3c5", "on-primary": "#ffffff", "on-tertiary-fixed-variant": "#005232", "on-error-container": "#93000a", "surface-dim": "#dadad8", "outline-variant": "#becabc", "on-primary-container": "#d3ffd5", "surface-bright": "#f9f9f7", "on-primary-fixed-variant": "#005323", "primary-container": "#15803d", "secondary-fixed": "#e3e2e6", "surface-variant": "#e2e3e1", "on-secondary": "#ffffff", "surface-container": "#eeeeec", "on-tertiary": "#ffffff", "on-secondary-fixed-variant": "#46464a", "background": "#f9f9f7", "error-container": "#ffdad6", "tertiary-fixed-dim": "#8ed6aa", "outline": "#6f7a6e", "on-secondary-container": "#646468", "error": "#ba1a1a", "on-tertiary-container": "#ceffde", "secondary": "#5e5e62", "on-secondary-fixed": "#1b1b1f" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "30": "7.5rem",  "space-md": "1rem", "space-xl": "2.5rem", "gutter-mobile": "1rem", "space-xs": "0.25rem", "gutter": "1.5rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "margin-mobile": "1.25rem", "margin": "3rem" }, "fontFamily": { "label-sm": ["Inter"], "display-xl-mobile": ["Plus Jakarta Sans"], "body-md": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "label-md": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "body-lg": ["Inter"], "headline-sm": ["Plus Jakarta Sans"], "display-xl": ["Plus Jakarta Sans"], "body-sm": ["Inter"] }, "fontSize": { "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "600" }], "display-xl-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "500" }], "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600" }], "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.025em", "fontWeight": "600" }], "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display-xl": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "600" }], "body-sm": ["13px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }] } } } };</script><link rel="stylesheet" href="/css/stitch-1440-bridge.css"/></head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 left-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="bg-surface-container-low px-gutter"><div class="max-w-[1360px] mx-auto px-6 lg:px-12 h-10 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm"><div class="flex items-center gap-space-sm"><span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span><span class="uppercase tracking-wider text-primary font-label-sm text-label-sm">Заявка до 18:00 • Выезд в тот же день до 20:00</span></div><div class="flex items-center gap-space-lg"><div class="hidden md:flex items-center gap-space-md"><a class="hover:text-on-surface transition-colors font-label-md text-label-md" href="tel:+74950000000">+7 495 000-00-00</a><span class="text-outline-variant">•</span><a class="hover:text-on-surface transition-colors font-label-md text-label-md" href="tel:+79250000000">+7 925 000-00-00</a><span class="text-outline-variant">•</span><a class="hover:text-primary transition-colors uppercase tracking-wider font-label-sm text-label-sm" href="#">Telegram</a></div><div class="flex items-center gap-space-xs text-tertiary"><span class="material-symbols-outlined text-[16px]">verified</span><span class="font-label-sm text-label-sm uppercase tracking-wider hidden sm:inline">Swiss Quality Standard</span></div></div></div></div><div class="max-w-[1360px] mx-auto px-6 lg:px-12"><div class="h-20 flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md shrink-0"><a class="flex flex-col" data-path="glavnaya" href="/"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface">KLINETO</span></a></div><nav class="hidden xl:flex items-center gap-space-xs" data-active-classes="bg-surface-container-high text-on-surface font-semibold"><a aria-current="page" class="px-space-md py-space-xs rounded-lg transition-colors bg-surface-container-high text-on-surface font-semibold" data-path="glavnaya" href="/">Главная</a><a class="px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="kvartiry" href="/uborka-kvartir">Квартиры</a><a class="px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="doma-i-kottedzhi" href="/uborka-domov">Дома и коттеджи</a><a class="px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="ofisy" href="/uborka-ofisov">Офисы</a><a class="px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="khimchistka" href="/himchistka-mebeli">Химчистка</a><a class="px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="korporativnym-klientam" href="/korporativnym">Корпоративным клиентам</a><a class="px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="kontakty" href="/kontakty">Контакты</a></nav><div class="flex items-center gap-space-md shrink-0"><button class="px-space-lg py-space-sm bg-primary-container text-on-primary font-label-md text-label-md uppercase tracking-wider rounded-lg hover:bg-primary transition-colors shadow-[0_2px_12px_rgba(21,128,61,0.2)]" type="button">Оставить заявку</button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-30 bg-surface min-h-[calc(100vh-28rem)]"><div class="flex flex-col w-full">
+<!-- Breadcrumbs & Service Tracker Header -->
+<section class="w-full bg-surface-bright pb-6 pt-4">
+<div class="max-w-[1360px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+<nav aria-label="Хлебные крошки" class="flex items-center gap-2 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">
+<a class="hover:text-primary transition-colors" href="#">Главная</a>
+<span class="text-secondary select-none">/</span>
+<a class="hover:text-primary transition-colors" data-path="kvartiry" href="/uborka-kvartir">Квартиры</a>
+<span class="text-secondary select-none">/</span>
+<span class="text-on-surface font-semibold">Поддерживающая уборка</span>
+</nav>
+<div class="flex items-center gap-3">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container rounded-full text-on-surface-variant font-label-sm text-label-sm uppercase">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span>Дежурный технолог на связи</span>
+</div>
+<div class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 bg-primary/10 text-primary rounded-full font-label-sm text-label-sm font-semibold uppercase">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">shield</span>
+<span>Страховой фонд 10 000 000 ₽</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Hero Section (Editorial Split Pattern) -->
+<section class="w-full bg-surface-bright pb-16 lg:pb-24">
+<div class="max-w-[1360px] mx-auto px-6 lg:px-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+<!-- Left Column: Editorial & Context -->
+<div class="lg:col-span-7 flex flex-col items-start space-y-7">
+<div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-primary/10 text-primary font-label-md text-label-md tracking-wider uppercase font-semibold">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+<span>Регулярный уход и чистота 24/7</span>
+</div>
+<div class="space-y-4">
+<h1 class="font-headline-lg text-headline-lg lg:font-display-xl lg:text-display-xl tracking-tight text-on-surface text-balance">
+              Поддерживающая уборка квартиры в Москве и МО
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl text-pretty leading-relaxed">
+              Деликатное поддержание безупречной чистоты жилья опытными постоянными клинерами. Комплексная сухая и влажная уборка, бережное обеспыливание всех открытых плоскостей, дезинфекция сантехники и свежесть во всем доме — разово или по персональному календарю.
+            </p>
+</div>
+<!-- 3 Micro Value Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 w-full pt-1">
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between space-y-2.5 group hover:bg-surface-container-low transition-colors">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-[16px] leading-5 text-on-surface font-semibold">Закрепленный мастер</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Один проверенный клинер по вашему расписанию</p>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between space-y-2.5 group hover:bg-surface-container-low transition-colors">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">eco</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-[16px] leading-5 text-on-surface font-semibold">Немецкая экохимия</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Сертифицированные экосоставы Kiehl &amp; Buzil</p>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between space-y-2.5 group hover:bg-surface-container-low transition-colors">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-[16px] leading-5 text-on-surface font-semibold">Выезд в день заказа</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Готовность к старту на объекте за 120 минут</p>
+</div>
+</div>
+</div>
+<!-- Call to Actions & Starting Metric -->
+<div class="flex flex-wrap items-center gap-5 pt-3 w-full">
+<a class="inline-flex items-center justify-center h-13 px-8 rounded-lg bg-primary-container hover:bg-tertiary text-on-primary font-label-md text-label-md uppercase tracking-wider transition-all duration-150 shadow-sm shadow-primary/20" href="#quick-booking-section">
+              Заказать поддерживающую уборку
+            </a>
+<a class="inline-flex items-center justify-center h-13 px-7 rounded-lg bg-surface-container-highest hover:bg-surface-container-high text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors" href="#rates-grid">
+              Рассчитать стоимость
+            </a>
+<div class="flex items-center gap-3 pl-2 sm:border-l sm:border-surface-variant">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Фиксированно</span>
+<span class="font-headline-md text-headline-md text-primary font-bold tracking-tight">от 3 490 ₽</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Visual Hero Container -->
+<div class="lg:col-span-5 relative">
+<div class="relative w-full h-[520px] rounded-2xl overflow-hidden shadow-xl bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Photorealistic contemporary penthouse living room with minimalist stone finishes, warm architectural lighting, flawless oak herringbone flooring, and spotless marble surfaces in Moscow residence. High-end architectural photography, quiet luxury, soft morning illumination." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuno1bT0VgmwYMlv-H6B6-V_SnQ_M3goqZi6ZfHiPLO23J5T0QtHR9YdQxn2hxjvysWTbZ94bo7FVp3Eq3ZNp_PUGzz4C00FWQTdINrkBBXTYJPmuQ0s-lWOYts8X9WqgtO5qTTbwS645LYPWCvaoSEuR4IPYg-tXcgRKvVUyoyxuFO4cGIuQZAsqB5Df9CIisY0MhkUV85L04WLT4KxNolnZH7hXGdDzwxhc2-BwiMV681BcTXkRyFg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/85 via-transparent to-transparent"></div>
+<!-- Quality Badge Overlay -->
+<div class="absolute bottom-6 left-6 right-6 p-5 rounded-xl bg-surface-container-lowest/95 backdrop-blur-md shadow-lg flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<div class="space-y-1">
+<div class="font-label-md text-label-md uppercase tracking-wider text-primary font-bold">
+                  Стандарт чистоты Klineto Care
+                </div>
+<div class="font-body-sm text-body-sm text-on-surface-variant leading-snug">
+                  100% материальное страхование имущества по официальному договору до 10 000 000 ₽ при каждом визите.
+                </div>
+</div>
+</div>
+</div>
+<!-- Decorative Floating Indicator -->
+<div class="absolute -top-4 -right-4 hidden xl:flex items-center gap-2 px-4 py-2.5 rounded-xl bg-surface-container-lowest shadow-md">
+<span class="material-symbols-outlined text-primary text-[18px]">workspace_premium</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold uppercase">Swiss ISO 9001 Сертификация</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Target Audiences / User Needs -->
+<section class="w-full bg-surface-container-low py-18 lg:py-24">
+<div class="max-w-[1360px] mx-auto px-6 lg:px-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+<div class="space-y-3">
+<div class="font-label-md text-label-md uppercase tracking-wider text-primary font-semibold">Целевые сценарии</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Кому идеально подходит поддерживающий клининг</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+          Решение бытовой рутины без компромиссов: возвращайтесь в безукоризненно свежий дом без траты драгоценного личного времени.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 01 -->
+<div class="p-8 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow group">
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<span class="font-display-xl text-3xl font-bold text-outline-variant group-hover:text-primary transition-colors">01</span>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[20px]">schedule</span>
+</div>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Занятым профессионалам и семьям</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2.5 leading-relaxed">
+                Освободите от 15 часов свободного времени каждую неделю для любимых дел, карьеры, близких и полноценного отдыха.
+              </p>
+</div>
+</div>
+<div class="pt-6 mt-6 border-t border-surface-container text-primary font-label-sm text-label-sm uppercase font-semibold flex items-center gap-1.5">
+<span>+15 часов к выходным</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+<!-- Card 02 -->
+<div class="p-8 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow group">
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<span class="font-display-xl text-3xl font-bold text-outline-variant group-hover:text-primary transition-colors">02</span>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[20px]">pets</span>
+</div>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Владельцам домашних питомцев</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2.5 leading-relaxed">
+                Экспресс-сбор шерсти, устранение специфических запахов и микрочастиц с напольных покрытий, плинтусов и мягкой мебели.
+              </p>
+</div>
+</div>
+<div class="pt-6 mt-6 border-t border-surface-container text-primary font-label-sm text-label-sm uppercase font-semibold flex items-center gap-1.5">
+<span>Гипоаллергенный эффект</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+<!-- Card 03 -->
+<div class="p-8 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow group">
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<span class="font-display-xl text-3xl font-bold text-outline-variant group-hover:text-primary transition-colors">03</span>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[20px]">arrow_back_ios_new</span>
+</div>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">После генеральной уборки</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2.5 leading-relaxed">
+                Надежное продление эффекта фундаментальной чистоты на долгие месяцы без накопления застарелых загрязнений.
+              </p>
+</div>
+</div>
+<div class="pt-6 mt-6 border-t border-surface-container text-primary font-label-sm text-label-sm uppercase font-semibold flex items-center gap-1.5">
+<span>Экономия до 40% бюджета</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+<!-- Card 04 -->
+<div class="p-8 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow group">
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<span class="font-display-xl text-3xl font-bold text-outline-variant group-hover:text-primary transition-colors">04</span>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[20px]">apartment</span>
+</div>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Арендаторам и собственникам</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2.5 leading-relaxed">
+                Долгосрочная защита премиальной отделки, деликатных каменных столешниц, паркета и фурнитуры от износа.
+              </p>
+</div>
+</div>
+<div class="pt-6 mt-6 border-t border-surface-container text-primary font-label-sm text-label-sm uppercase font-semibold flex items-center gap-1.5">
+<span>Сохранение ликвидности</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Technical Cleaning Protocol (Zoned Specification) -->
+<section class="w-full bg-surface-bright py-18 lg:py-24">
+<div class="max-w-[1360px] mx-auto px-6 lg:px-12">
+<!-- Section Header with Badge -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
+<div class="space-y-3">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm uppercase font-semibold">
+<span class="material-symbols-outlined text-base text-primary">fact_check</span>
+<span>Регламент из 28 контрольных параметров клинера</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Что входит в поддерживающую уборку</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg">
+          Каждый клинер следует строгой маршрутной карте и двухступенчатому чек-листу. Контроль чистоты проводится под личным контролем старшего технолога.
+        </p>
+</div>
+<!-- 4 Architectural Zone Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Zone 1: Rooms -->
+<div class="p-7 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="space-y-6">
+<div class="flex items-center justify-between pb-4 border-b border-surface-container">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">bed</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Жилые комнаты</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">01 / ЗОНА</span>
+</div>
+<ul class="space-y-3.5 font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span>Сухое обеспыливание доступных открытых поверхностей до 1.8 м</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span>Влажная уборка подоконников, розеток и радиаторов снаружи</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span>Аккуратная заправка постели и расправление текстиля</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span>Очистка и протирка зеркальных поверхностей без разводов</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span>Влажная мойка плинтусов и напольных покрытий спецсоставом</span>
+</li>
+</ul>
+</div>
+<div class="mt-6 pt-4 border-t border-surface-container flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm uppercase">
+<span>Глубина уборки</span>
+<span class="font-semibold text-on-surface">Повседневная</span>
+</div>
+</div>
+<!-- Zone 2: Kitchen -->
+<div class="p-7 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="space-y-6">
+<div class="flex items-center justify-between pb-4 border-b border-surface-container">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">countertops</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Кухня и столовая</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">02 / ЗОНА</span>
+</div>
+<ul class="space-y-3.5 font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span>Бережная протирка фасадов гарнитура на высоту вытянутой руки</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span>Очистка рабочей зоны, фартука и столешницы от свежих пятен</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span>Мойка и полировка кухонной раковины со смесителем</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span>Протирка варочной панели, духового шкафа и СВЧ снаружи</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span>Вынос бытового мусора до 5 кг и замена полиэтиленового пакета</span>
+</li>
+</ul>
+</div>
+<div class="mt-6 pt-4 border-t border-surface-container flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm uppercase">
+<span>Эко-обезжиривание</span>
+<span class="font-semibold text-on-surface">Kiehl Германия</span>
+</div>
+</div>
+<!-- Zone 3: Bathroom -->
+<div class="p-7 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="space-y-6">
+<div class="flex items-center justify-between pb-4 border-b border-surface-container">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">bathtub</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Санузел и ванная</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">03 / ЗОНА</span>
+</div>
+<ul class="space-y-3.5 font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span>Полная антибактериальная дезинфекция унитаза, раковины и биде</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span>Очистка ванны или стенок душевой кабины от свежего мыльного налета</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span>Полировка хромированных смесителей и душевой лейки до блеска</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span>Мытье зеркальных шкафчиков и влажная протирка полотенцесушителя</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span>Влажная уборка кафельного пола с антисептическим средством</span>
+</li>
+</ul>
+</div>
+<div class="mt-6 pt-4 border-t border-surface-container flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm uppercase">
+<span>Антибактериально</span>
+<span class="font-semibold text-on-surface">100% защита</span>
+</div>
+</div>
+<!-- Zone 4: Hallway -->
+<div class="p-7 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="space-y-6">
+<div class="flex items-center justify-between pb-4 border-b border-surface-container">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">door_front</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Прихожая и коридор</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">04 / ЗОНА</span>
+</div>
+<ul class="space-y-3.5 font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span>Обеспыливание полок, открытых консолей и обувных секций</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span>Протирка входной двери с обеих сторон и ручек дезинфектором</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span>Мытье ростовых зеркал гардеробной зоны без разводов</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span>Очистка пространства входного коврика и сухая вакуумация</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span>Тщательная влажная мойка пола с защитой от уличной пыли</span>
+</li>
+</ul>
+</div>
+<div class="mt-6 pt-4 border-t border-surface-container flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm uppercase">
+<span>Входная группа</span>
+<span class="font-semibold text-on-surface">Идеальный порядок</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Transparent Pricing Grid -->
+<section class="w-full bg-surface-container-low py-18 lg:py-24" id="rates-grid">
+<div class="max-w-[1360px] mx-auto px-6 lg:px-12">
+<div class="text-center max-w-2xl mx-auto mb-14 space-y-3">
+<div class="font-label-md text-label-md uppercase tracking-wider text-primary font-semibold">Фиксированная стоимость без скрытых доплат</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Тарифы на поддерживающую уборку квартиры</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Цена включает сертифицированные гипоаллергенные экосоставы, чистый профессиональный микрофибровый инвентарь и выезд специалиста в пределах МКАД.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+<!-- Tier 1: Studio / 1BR -->
+<div class="p-8 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="space-y-6">
+<div class="space-y-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Компактное жилье</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Студия / 1-комнатная</h3>
+<div class="text-body-sm font-body-sm text-on-surface-variant">Площадь до 40 м²</div>
+</div>
+<div class="pt-4 border-t border-surface-container">
+<div class="font-display-xl text-3xl font-bold text-on-surface">3 490 ₽</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-1 uppercase">За 1 выезд мастера</div>
+</div>
+<ul class="space-y-3 font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">timer</span>
+<span>Время: 2 – 3 часа</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">person</span>
+<span>1 профессиональный клинер</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">cleaning_services</span>
+<span>Полная сухая и влажная уборка</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">water_drop</span>
+<span>Один совмещенный санузел</span>
+</li>
+</ul>
+</div>
+<div class="pt-8">
+<a class="w-full inline-flex items-center justify-center h-12 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors" href="#quick-booking-section">
+              Выбрать тариф
+            </a>
+</div>
+</div>
+<!-- Tier 2: 2BR (POPULAR / HERO CARD) -->
+<div class="p-8 rounded-2xl bg-surface-container-lowest shadow-md flex flex-col justify-between relative ring-2 ring-primary">
+<div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-on-primary font-label-sm text-label-sm uppercase font-bold tracking-wider rounded-full shadow-sm">
+            Хит / Популярный выбор
+          </div>
+<div class="space-y-6">
+<div class="space-y-2">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider font-semibold">Оптимальный стандарт</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">2-комнатная квартира</h3>
+<div class="text-body-sm font-body-sm text-on-surface-variant">Площадь до 65 м²</div>
+</div>
+<div class="pt-4 border-t border-surface-container">
+<div class="font-display-xl text-3xl font-bold text-primary">4 490 ₽</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-1 uppercase">За 1 выезд мастера</div>
+</div>
+<ul class="space-y-3 font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">timer</span>
+<span>Время: 3 – 4 часа</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">person</span>
+<span>1 специалист высшего разряда</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">cleaning_services</span>
+<span>Расширенный уход за поверхностями</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">soap</span>
+<span>Уборка санузла + дезинфекция кухни</span>
+</li>
+</ul>
+</div>
+<div class="pt-8">
+<a class="w-full inline-flex items-center justify-center h-12 rounded-lg bg-primary-container hover:bg-tertiary text-on-primary font-label-md text-label-md uppercase tracking-wider transition-colors shadow-sm" href="#quick-booking-section">
+              Выбрать тариф
+            </a>
+</div>
+</div>
+<!-- Tier 3: 3BR -->
+<div class="p-8 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="space-y-6">
+<div class="space-y-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Просторное жилье</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">3-комнатная квартира</h3>
+<div class="text-body-sm font-body-sm text-on-surface-variant">Площадь до 90 м²</div>
+</div>
+<div class="pt-4 border-t border-surface-container">
+<div class="font-display-xl text-3xl font-bold text-on-surface">5 990 ₽</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-1 uppercase">За 1 выезд бригады</div>
+</div>
+<ul class="space-y-3 font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">timer</span>
+<span>Время: 4 – 5 часов</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">group</span>
+<span>1 – 2 опытных клинера</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">bathtub</span>
+<span>Уборка до 2 полноценных санузлов</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">check_circle</span>
+<span>Полный протокол обеспыливания</span>
+</li>
+</ul>
+</div>
+<div class="pt-8">
+<a class="w-full inline-flex items-center justify-center h-12 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors" href="#quick-booking-section">
+              Выбрать тариф
+            </a>
+</div>
+</div>
+<!-- Tier 4: Penthouses / Large Area -->
+<div class="p-8 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="space-y-6">
+<div class="space-y-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Премиум резиденции</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Пентхаусы и от 100 м²</h3>
+<div class="text-body-sm font-body-sm text-on-surface-variant">Индивидуальный метраж</div>
+</div>
+<div class="pt-4 border-t border-surface-container">
+<div class="font-display-xl text-3xl font-bold text-on-surface">от 65 ₽/м²</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-1 uppercase">Персональный расчет</div>
+</div>
+<ul class="space-y-3 font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">support_agent</span>
+<span>Персональный менеджер объекта</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">diversity_3</span>
+<span>Слаженная мобильная бригада</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">tune</span>
+<span>Индивидуальный график визитов</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">diamond</span>
+<span>Уход за мрамором и ценным деревом</span>
+</li>
+</ul>
+</div>
+<div class="pt-8">
+<a class="w-full inline-flex items-center justify-center h-12 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors" href="#quick-booking-section">
+              Запросить расчет
+            </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Frequency & Subscription Economy -->
+<section class="w-full bg-surface-bright py-18 lg:py-24">
+<div class="max-w-[1360px] mx-auto px-6 lg:px-12">
+<div class="rounded-3xl bg-surface-container p-8 lg:p-14 shadow-sm relative overflow-hidden">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+<div class="lg:col-span-6 space-y-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-lowest text-primary rounded-full font-label-sm text-label-sm uppercase font-semibold">
+<span class="material-symbols-outlined text-[16px]">loyalty</span>
+<span>Экономия при регулярном графике</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+              Периодичность и выгода подписки на чистоту Klineto
+            </h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Оформите постоянную подписку и забудьте о домашних заботах навсегда. Ваш персональный клинер будет приходить в строго согласованный день и час, а стоимость каждой уборки станет ощутимо выгоднее.
+            </p>
+<div class="space-y-3.5 pt-2">
+<div class="flex items-center gap-3">
+<div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-medium">Закрепление одного клинера, знающего ваши предпочтения</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-medium">Бесшовная автоматическая оплата картой после завершения клининга</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-medium">Бесплатная гибкая заморозка графика на период отпуска или поездок</span>
+</div>
+</div>
+</div>
+<!-- Subscription Discount Modules -->
+<div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
+<!-- Tier 1x/wk -->
+<div class="p-6 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col items-center text-center justify-between border-2 border-primary">
+<div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold text-lg mb-3">
+                -20%
+              </div>
+<div class="space-y-1">
+<h4 class="font-headline-sm text-[17px] font-semibold text-on-surface">1 раз в неделю</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Максимальная выгода и дом в идеале без пауз</p>
+</div>
+<div class="mt-4 pt-4 border-t border-surface-container w-full font-label-sm text-label-sm uppercase text-primary font-bold">
+                ТОП ВЫБОР
+              </div>
+</div>
+<!-- Tier 2x/mo -->
+<div class="p-6 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col items-center text-center justify-between">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-lg mb-3">
+                -15%
+              </div>
+<div class="space-y-1">
+<h4 class="font-headline-sm text-[17px] font-semibold text-on-surface">2 раза в месяц</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Каждые 2 недели: свежесть и порядок</p>
+</div>
+<div class="mt-4 pt-4 border-t border-surface-container w-full font-label-sm text-label-sm uppercase text-on-surface-variant">
+                Популярно
+              </div>
+</div>
+<!-- Tier 1x/mo -->
+<div class="p-6 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col items-center text-center justify-between">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-lg mb-3">
+                -10%
+              </div>
+<div class="space-y-1">
+<h4 class="font-headline-sm text-[17px] font-semibold text-on-surface">1 раз в месяц</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Легкий плановый рефреш вашего пространства</p>
+</div>
+<div class="mt-4 pt-4 border-t border-surface-container w-full font-label-sm text-label-sm uppercase text-on-surface-variant">
+                Базовый
+              </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Interactive Booking Engine Form -->
+<section class="w-full bg-surface-container-low py-18 lg:py-24" id="quick-booking-section">
+<div class="max-w-[1360px] mx-auto px-6 lg:px-12">
+<div class="bg-surface-container-lowest rounded-3xl p-8 lg:p-14 shadow-md">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Form Header & Trust Pillars -->
+<div class="lg:col-span-5 flex flex-col justify-between space-y-8">
+<div class="space-y-4">
+<div class="font-label-md text-label-md uppercase tracking-wider text-primary font-semibold">Быстрое бронирование за 60 секунд</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Забронировать поддерживающую уборку</h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Заполните форму, и наш дежурный диспетчер подтвердит визит клинера в течение 5 минут. Никакой предоплаты — расчет только после вашего осмотра.
+              </p>
+</div>
+<!-- Trust Guarantees -->
+<div class="space-y-4 pt-4 border-t border-surface-container">
+<div class="flex items-start gap-3.5">
+<div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[18px]">credit_card</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-[15px] font-semibold text-on-surface">Оплата после приемки работы</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Наличными, по QR-коду или банковской картой мастеру</p>
+</div>
+</div>
+<div class="flex items-start gap-3.5">
+<div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[18px]">published_with_changes</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-[15px] font-semibold text-on-surface">Бесплатный повторный выезд</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Если будут замечания — исправим всё в течение 24 часов за свой счет</p>
+</div>
+</div>
+<div class="flex items-start gap-3.5">
+<div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-[15px] font-semibold text-on-surface">Проверенный персонал МВД</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Все клинеры официально оформлены и обучены в академии Klineto</p>
+</div>
+</div>
+</div>
+<!-- Mini Telephone Help Widget -->
+<div class="p-4 rounded-xl bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">headset_mic</span>
+<span class="font-body-sm text-body-sm text-on-surface">Нужна консультация диспетчера?</span>
+</div>
+<a class="font-label-md text-label-md uppercase text-primary font-bold hover:underline" href="tel:+74950000000">Позвонить</a>
+</div>
+</div>
+<!-- Active Functional Form -->
+<div class="lg:col-span-7">
+<form class="space-y-6 lead-form" id="order-form" method="post" action="#" novalidate data-goal-event="lead_submit">
+<!-- Property Size Selection -->
+<div>
+<label class="block font-label-md text-label-md uppercase tracking-wider text-on-surface font-semibold mb-3">
+                  1. Выберите формат или площадь квартиры
+                </label>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" name="flat-size" type="radio" value="1k"/>
+<div class="p-3.5 text-center rounded-xl bg-surface-container peer-checked:bg-primary-container peer-checked:text-on-primary transition-all">
+<div class="font-headline-sm text-sm font-semibold">1-комнатная</div>
+<div class="font-label-sm text-[11px] opacity-80 mt-0.5">до 40 м²</div>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="flat-size" type="radio" value="2k"/>
+<div class="p-3.5 text-center rounded-xl bg-surface-container peer-checked:bg-primary-container peer-checked:text-on-primary transition-all">
+<div class="font-headline-sm text-sm font-semibold">2-комнатная</div>
+<div class="font-label-sm text-[11px] opacity-80 mt-0.5">до 65 м²</div>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="flat-size" type="radio" value="3k"/>
+<div class="p-3.5 text-center rounded-xl bg-surface-container peer-checked:bg-primary-container peer-checked:text-on-primary transition-all">
+<div class="font-headline-sm text-sm font-semibold">3-комнатная</div>
+<div class="font-label-sm text-[11px] opacity-80 mt-0.5">до 90 м²</div>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="flat-size" type="radio" value="4k"/>
+<div class="p-3.5 text-center rounded-xl bg-surface-container peer-checked:bg-primary-container peer-checked:text-on-primary transition-all">
+<div class="font-headline-sm text-sm font-semibold">Большая</div>
+<div class="font-label-sm text-[11px] opacity-80 mt-0.5">от 100 м²</div>
+</div>
+</label>
+</div>
+</div>
+<!-- Date & Time Slot Selection -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="block font-label-md text-label-md uppercase tracking-wider text-on-surface font-semibold mb-2" for="cleaning-date">
+                    2. Желаемая дата
+                  </label>
+<input class="w-full h-13 px-4 rounded-xl bg-surface-container text-on-surface focus:outline-none focus:ring-2 focus:ring-primary font-body-md text-body-md" id="cleaning-date" type="date" value="2025-05-15"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md uppercase tracking-wider text-on-surface font-semibold mb-2" for="cleaning-time">
+                    Время начала
+                  </label>
+<select class="w-full h-13 px-4 rounded-xl bg-surface-container text-on-surface focus:outline-none focus:ring-2 focus:ring-primary font-body-md text-body-md" id="cleaning-time">
+<option>09:00 — Утро</option>
+<option selected="">11:00 — Комфорт</option>
+<option>14:00 — День</option>
+<option>17:00 — Вечер</option>
+<option>Срочно (в течение 2 часов)</option>
+</select>
+</div>
+</div>
+<!-- Name & Phone Fields -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="block font-label-md text-label-md uppercase tracking-wider text-on-surface font-semibold mb-2" for="client-name">
+                    3. Ваше имя
+                  </label>
+<input class="w-full h-13 px-4 rounded-xl bg-surface-container text-on-surface placeholder:text-outline-variant focus:outline-none focus:ring-2 focus:ring-primary font-body-md text-body-md" id="client-name" placeholder="Константин" required="" type="text"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md uppercase tracking-wider text-on-surface font-semibold mb-2" for="client-phone">
+                    Номер телефона
+                  </label>
+<input class="w-full h-13 px-4 rounded-xl bg-surface-container text-on-surface placeholder:text-outline-variant focus:outline-none focus:ring-2 focus:ring-primary font-body-md text-body-md" id="client-phone" placeholder="+7 (999) 000-00-00" required="" type="tel"/>
+</div>
+</div>
+<!-- Subscription Toggle Checkbox -->
+<div class="p-4 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-3">
+<input checked="" class="w-5 h-5 rounded text-primary focus:ring-primary cursor-pointer accent-primary" id="sub-toggle" type="checkbox"/>
+<label class="cursor-pointer font-body-md text-body-md text-on-surface font-medium select-none" for="sub-toggle">
+                    Нужен постоянный клинер по подписке (со скидкой до 20%)
+                  </label>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">stars</span>
+</div>
+<!-- Submission CTA Button -->
+<button class="w-full h-14 rounded-xl bg-primary-container hover:bg-tertiary text-on-primary font-label-md text-label-md uppercase tracking-wider transition-all duration-150 shadow-md shadow-primary/20 flex items-center justify-center gap-2 cursor-pointer" type="submit">
+<span>Подтвердить бронирование уборки</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<p class="font-body-sm text-[12px] text-center text-on-surface-variant leading-relaxed">
+                Нажимая на кнопку, вы соглашаетесь на обработку персональных данных и подтверждаете согласие с <a class="underline hover:text-primary" href="#">регламентом конфиденциальности</a>.
+              </p>
+<!-- Success Alert Notice (Hidden by Default) -->
+<div class="hidden p-4 rounded-xl bg-primary/10 border-l-4 border-primary text-on-surface space-y-1" id="booking-success-msg">
+<div class="font-label-md text-label-md uppercase text-primary font-bold">Заявка принята в работу!</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Дежурный координатор свяжется с вами в течение 3-5 минут для подтверждения адреса объекта.</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Internal Linking & Category Expansion -->
+<section class="w-full bg-surface-bright py-18 lg:py-24">
+<div class="max-w-[1360px] mx-auto px-6 lg:px-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+<div class="space-y-3">
+<div class="font-label-md text-label-md uppercase tracking-wider text-primary font-semibold">Комплексный уход</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Смежные услуги в категории «Квартиры»</h2>
+</div>
+<a class="inline-flex items-center gap-2 font-label-md text-label-md uppercase tracking-wider text-primary font-semibold hover:underline" href="#">
+<span>Смотреть все услуги</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Cross-service 01 -->
+<a class="group p-6 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col justify-between h-[240px]" href="#">
+<div>
+<div class="w-10 h-10 rounded-xl bg-surface-container group-hover:bg-primary-container group-hover:text-on-primary transition-colors flex items-center justify-center text-on-surface mb-5">
+<span class="material-symbols-outlined text-[22px]">cleaning_bucket</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Генеральная уборка</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 line-clamp-2">
+              Глубокая очистка каждого сантиметра жилья, включая труднодоступные зоны, вытяжки и шкафы изнутри.
+            </p>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-surface-container font-label-sm text-label-sm uppercase text-on-surface-variant">
+<span class="font-semibold text-primary">от 7 990 ₽</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Cross-service 02 -->
+<a class="group p-6 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col justify-between h-[240px]" href="#">
+<div>
+<div class="w-10 h-10 rounded-xl bg-surface-container group-hover:bg-primary-container group-hover:text-on-primary transition-colors flex items-center justify-center text-on-surface mb-5">
+<span class="material-symbols-outlined text-[22px]">window</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Мойка окон в квартире</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 line-clamp-2">
+              Остекление, рамы, подоконники и москитные сетки без разводов специальной обессоленной водой.
+            </p>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-surface-container font-label-sm text-label-sm uppercase text-on-surface-variant">
+<span class="font-semibold text-primary">от 490 ₽/створка</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Cross-service 03 -->
+<a class="group p-6 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col justify-between h-[240px]" href="#">
+<div>
+<div class="w-10 h-10 rounded-xl bg-surface-container group-hover:bg-primary-container group-hover:text-on-primary transition-colors flex items-center justify-center text-on-surface mb-5">
+<span class="material-symbols-outlined text-[22px]">construction</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">После ремонта</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 line-clamp-2">
+              Полное обеспыливание промышленными пылесосами, удаление следов затирки, краски и строительного скотча.
+            </p>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-surface-container font-label-sm text-label-sm uppercase text-on-surface-variant">
+<span class="font-semibold text-primary">от 110 ₽/м²</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Cross-service 04 -->
+<a class="group p-6 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col justify-between h-[240px]" href="#">
+<div>
+<div class="w-10 h-10 rounded-xl bg-surface-container group-hover:bg-primary-container group-hover:text-on-primary transition-colors flex items-center justify-center text-on-surface mb-5">
+<span class="material-symbols-outlined text-[22px]">chair</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Химчистка мебели</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 line-clamp-2">
+              Глубокая экстракторная чистка диванов, кресел и матрасов немецким оборудованием с сушкой на месте.
+            </p>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-surface-container font-label-sm text-label-sm uppercase text-on-surface-variant">
+<span class="font-semibold text-primary">от 2 490 ₽</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-surface-container-low text-on-surface mt-auto"><div class="max-w-[1360px] mx-auto px-6 lg:px-12 pt-16 pb-12"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12"><div class="lg:col-span-2 flex flex-col justify-between space-y-6"><div class="space-y-4"><div class="flex items-center gap-3"><img alt="Klineto Brand Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XaIoKmw1m_bQLVIStD96F2OEVotJOrBofeoe2xnS7x7RkbcAcKL1fbxhRbvfRpbsni9UHjrdMB7cNE6UXf7hMfERRquDxInOt6AhG05CTX68D1gkjHBATx1Hoq7tLxGhYKwWx60khpqOswz5b8Am3oCsdKMQ_8b6YyDHp7jS5QZ19sMx5RhfF66UdK-Q27JgWbnrWuFL4lf0npvC4mjrujaI0Vbh9u2WDJHgiywXcK2bhD2IqC7Wt0oV7T"/><span class="font-headline-sm text-headline-sm uppercase tracking-tight text-on-surface">Klineto</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Безупречный клининг премиального уровня в Москве и МО. Бесплатный повторный выезд при любых замечаниях.</p></div><div class="p-4 rounded-xl bg-surface-container space-y-2"><div class="flex items-center gap-2 text-primary font-label-md text-label-md uppercase"><span class="material-symbols-outlined text-base">verified</span><span>Швейцарский стандарт качества</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">Персональный менеджер объекта, проверенные сертифицированные клинеры и безопасная гипоаллергенная химия европейского производства.</p></div></div><div class="space-y-4"><h3 class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-semibold">Уборка квартир</h3><ul class="space-y-2.5 font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-primary transition-colors" data-path="kvartiry" href="/uborka-kvartir">Генеральная уборка</a></li><li><a class="hover:text-primary transition-colors" href="#">После ремонта</a></li><li><a class="hover:text-primary transition-colors" href="#">После аренды</a></li><li><a class="hover:text-primary transition-colors" href="#">Поддерживающая</a></li><li><a class="hover:text-primary transition-colors" href="#">Мойка окон и балконов</a></li><li><a class="hover:text-primary transition-colors" data-path="himchistka" href="#">Премиальная химчистка</a></li></ul></div><div class="space-y-4"><h3 class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-semibold">Уборка домов</h3><ul class="space-y-2.5 font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-primary transition-colors" data-path="doma" href="#">Коттеджи и резиденции</a></li><li><a class="hover:text-primary transition-colors" href="#">Загородные дома</a></li><li><a class="hover:text-primary transition-colors" href="#">Генеральный клининг</a></li><li><a class="hover:text-primary transition-colors" href="#">Послестроительная уборка</a></li><li><a class="hover:text-primary transition-colors" href="#">Мойка фасадов и остекления</a></li></ul></div><div class="space-y-4"><h3 class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-semibold">Корпоративным клиентам</h3><ul class="space-y-2.5 font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-primary transition-colors" data-path="ofisy" href="/uborka-ofisov">Офисные пространства</a></li><li><a class="hover:text-primary transition-colors" href="#">Ежедневная уборка</a></li><li><a class="hover:text-primary transition-colors" href="#">Генеральный клининг офисов</a></li><li><a class="hover:text-primary transition-colors" href="#">Постоянное обслуживание</a></li><li><a class="hover:text-primary transition-colors" href="#">Разовый клининг мероприятий</a></li></ul></div></div><div class="pt-8 mt-4 bg-surface-container-high/40 rounded-xl p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6"><div class="space-y-1"><div class="font-label-md text-label-md uppercase text-on-surface font-semibold">График дежурной службы</div><div class="font-body-md text-body-md text-on-surface-variant">Ежедневно с 08:00 до 23:00. Прием срочных заявок онлайн — круглосуточно.</div></div><div class="flex flex-wrap items-center gap-6"><div class="flex flex-col text-right"><a class="font-headline-sm text-headline-sm text-on-surface hover:text-primary transition-colors" href="tel:+74950000000">+7 (495) 000-00-00</a><span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Горячая линия Москва</span></div><div class="flex items-center gap-3"><a class="px-3 py-1.5 rounded-lg bg-surface-container-highest text-on-surface hover:bg-primary-container hover:text-on-primary transition-colors font-label-sm text-label-sm uppercase" href="https://t.me" rel="noreferrer" target="_blank">Telegram Bot</a><a class="px-3 py-1.5 rounded-lg bg-surface-container-highest text-on-surface hover:bg-primary-container hover:text-on-primary transition-colors font-label-sm text-label-sm uppercase" href="https://wa.me" rel="noreferrer" target="_blank">WhatsApp</a><a class="px-3 py-1.5 rounded-lg bg-surface-container-highest text-on-surface hover:bg-primary-container hover:text-on-primary transition-colors font-label-sm text-label-sm uppercase" href="https://vk.com" rel="noreferrer" target="_blank">VK</a></div></div></div><div class="mt-8 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 font-body-sm text-body-sm text-on-surface-variant"><p>© 2025 Klineto. Все права защищены. Премиальный клининговый сервис в Москве и Московской области.</p><div class="flex items-center gap-6 font-label-sm text-label-sm uppercase"><a class="hover:text-on-surface transition-colors" href="#">Политика конфиденциальности</a><a class="hover:text-on-surface transition-colors" href="#">Регламент обслуживания</a><a class="hover:text-on-surface transition-colors" href="#">Гарантийные обязательства</a></div></div></div></footer><script src="/js/form.js" defer></script></body></html>
