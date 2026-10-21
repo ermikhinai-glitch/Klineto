@@ -162,3 +162,24 @@ main .grid.items-stretch > .lg\:col-span-5,
 main .grid.items-stretch > .lg\:col-span-7 {
   height: 100%;
 }
+
+
+/* SEO block: tighter top gap after hero (pt-12 was too tall with hero pb) */
+#seo-block > div[class*="border-t"] {
+  padding-top: 1.5rem !important;
+}
+
+/* Kill Tailwind px-* still present as attributes on already-padded SEO shell */
+#seo-block.px-6,
+#seo-block[class*="px-"] {
+  padding-left: var(--page-inline) !important;
+  padding-right: var(--page-inline) !important;
+}
+
+/* Nested content shells: any direct child with horizontal padding inside padded section */
+main > .flex.flex-col > section > [class*="px-"],
+main > div.flex.flex-col > section > [class*="px-"],
+main > section > [class*="px-"] {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
