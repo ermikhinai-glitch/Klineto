@@ -47,7 +47,7 @@ header a[data-path="glavnaya"] > span {
     overflow: hidden !important;
     display: block !important;
     box-sizing: border-box !important;
-    padding-bottom: 250px !important; /* cards + CTAs + status */
+    padding-bottom: 260px !important; /* cards + CTAs + status (Stitch stack) */
   }
   .hero-unify-left > .hero-unify-bottom {
     position: absolute !important;
@@ -57,13 +57,12 @@ header a[data-path="glavnaya"] > span {
     margin: 0 !important;
     width: 100% !important;
   }
-  /* cards inside bottom are in-flow */
   .hero-unify-bottom .hero-unify-cards {
     position: static !important;
     width: 100% !important;
-    margin: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
-  /* legacy: cards-only absolute if no bottom wrapper */
   .hero-unify-left > .hero-unify-cards {
     position: absolute !important;
     left: 0 !important;
@@ -72,4 +71,8 @@ header a[data-path="glavnaya"] > span {
     margin: 0 !important;
     width: 100% !important;
   }
+}
+/* Equal-height metric cards (Stitch shell) */
+.hero-unify-cards > * {
+  min-height: 6.5rem;
 }
