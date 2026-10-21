@@ -89,14 +89,14 @@ html,body{overflow-x:clip;max-width:100%}
 </div>
 <!-- CTAs -->
 <div class="flex flex-wrap items-center gap-4 pt-4">
-<a class="px-8 py-3.5 bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md uppercase tracking-wider rounded-lg transition-all shadow-md active:scale-[0.98] inline-flex items-center gap-2" href="#quote-form">
+<a class="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md uppercase tracking-wider transition-all shadow-md" href="#quote-form">
 <span>Рассчитать смету на мебель</span>
-<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+<span class="material-symbols-outlined text-[18px]" aria-hidden="true">arrow_forward</span>
 </a>
-<div class="px-6 py-3.5 bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md uppercase tracking-wider rounded-lg transition-colors inline-flex items-center gap-2">
+<a class="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors" href="#price-table">
 <span class="text-on-surface-variant">Базовый прайс</span>
 <span class="text-primary font-bold">от 999 ₽</span>
-</div>
+</a>
 </div>
 </div>
 <!-- Right Hero Visual Card (5 cols) -->
@@ -317,7 +317,7 @@ html,body{overflow-x:clip;max-width:100%}
 </div>
 </section>
 <!-- SECTION 3: TRANSPARENT PRICING WITH VAT 20% -->
-<section class="w-full py-20 bg-surface-container-low">
+<section class="w-full py-20 bg-surface-container-low" id="price-table">
 <div class="w-full px-6">
 <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
 <div>
