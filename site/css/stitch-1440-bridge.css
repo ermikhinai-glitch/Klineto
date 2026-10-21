@@ -1,6 +1,25 @@
-/* Stitch 1440 bridge — logo/marquee/seo helpers, no mockup redesign */
+/* Stitch 1440 bridge */
 #seo-block a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 
+/* Logo: always two lines */
+header a[data-path="glavnaya"] {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  gap: 2px !important;
+  line-height: 1 !important;
+}
+header a[data-path="glavnaya"] > span {
+  display: block !important;
+  white-space: nowrap;
+}
+
+/* Marquee: never full-bleed */
+.klineto-marquee {
+  background: transparent !important;
+  width: 100%;
+}
 .klineto-marquee-track {
   width: max-content;
   animation: klineto-marquee 36s linear infinite;
@@ -12,4 +31,33 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .klineto-marquee-track { animation: none; }
+}
+
+/* Hero unify @ desktop: banner 540; cards bottom == banner bottom */
+.hero-unify-banner { height: 480px; }
+@media (min-width: 1024px) {
+  .hero-unify-banner {
+    height: 540px !important;
+    max-height: 540px !important;
+  }
+  .hero-unify-left {
+    position: relative !important;
+    height: 540px !important;
+    max-height: 540px !important;
+    overflow: hidden !important;
+    display: block !important; /* contain absolute cards */
+  }
+  /* Reserve space so copy doesn't sit under pinned cards */
+  .hero-unify-left {
+    padding-bottom: 148px !important;
+    box-sizing: border-box !important;
+  }
+  .hero-unify-cards {
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
 }
