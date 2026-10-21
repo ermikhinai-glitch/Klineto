@@ -76,3 +76,30 @@ header a[data-path="glavnaya"] > span {
 .hero-unify-cards > * {
   min-height: 6.5rem;
 }
+
+/* Banner rounding visible on all service heroes */
+.hero-unify-banner,
+.hero-unify-banner > div {
+  border-radius: 1rem; /* rounded-2xl-ish */
+  overflow: hidden;
+}
+@media (min-width: 1024px) {
+  .hero-unify-banner,
+  .hero-unify-banner > div {
+    border-radius: 1.25rem;
+  }
+}
+
+/* Unified small gap: hero → SEO (works with section pb-16) */
+#seo-block {
+  margin-top: -32px;
+}
+#seo-block .border-t {
+  padding-top: 1.5rem;
+}
+
+
+
+#seo-block[data-page="home"] {
+  margin-top: 0;
+}
