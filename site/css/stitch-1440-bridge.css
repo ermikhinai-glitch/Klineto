@@ -1,2 +1,15 @@
-/* Tiny bridge for Stitch 1440 pages — do not restyle mockup */
+/* Stitch 1440 bridge — logo/marquee/seo helpers, no mockup redesign */
 #seo-block a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+
+.klineto-marquee-track {
+  width: max-content;
+  animation: klineto-marquee 36s linear infinite;
+  will-change: transform;
+}
+@keyframes klineto-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .klineto-marquee-track { animation: none; }
+}
