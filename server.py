@@ -11,13 +11,21 @@ HOST = "0.0.0.0"
 
 
 def choose_port(raw: str | None) -> int:
+    """Pick listen port: honor PORT when usable, else local default 43127.
+
+    Amvera routes to amvera.yml containerPort (8080). On Amvera the run
+    command must set PORT=8080 — the platform does not always inject it.
+    Privileged ports (<1024) are remapped to 8080 (no root in the container).
+    """
     text = (raw or "").strip()
-    if text.isdigit() and int(text) >= 1024:
-        return int(text)
-    # Amvera defaults PORT to 80, and the container cannot bind it.
-    if text:
+    if not text:
+        return 43127
+    if not text.isdigit():
+        return 43127
+    port = int(text)
+    if port < 1024:
         return 8080
-    return 43127
+    return port
 
 
 PORT = choose_port(os.environ.get("PORT"))

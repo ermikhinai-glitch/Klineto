@@ -4,6 +4,8 @@ meta:
     name: pip
     version: "3.11"
 
+# Amvera proxies to containerPort. PORT is not always injected, so set it
+# explicitly — otherwise server.py falls back to 43127 and the site returns 503.
 run:
-  command: python3 -u server.py
+  command: env PORT=8080 python3 -u server.py
   containerPort: 8080
