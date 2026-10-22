@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
 """Static server for Klineto: clean paths, security headers, custom 404."""
 
+import os
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import unquote, urlparse
 
 ROOT = Path(__file__).resolve().parent / "site"
 HOST = "0.0.0.0"
-PORT = 43127
+# Amvera sets PORT to containerPort (default 80). Local run stays on 43127.
+PORT = int(os.environ.get("PORT", "43127"))
 
 CONTENT_TYPES = {
     ".html": "text/html; charset=utf-8",
@@ -98,7 +100,7 @@ class Handler(BaseHTTPRequestHandler):
 
 def main():
     httpd = ThreadingHTTPServer((HOST, PORT), Handler)
-    print(f"Klineto: http://127.0.0.1:{PORT}")
+    print(f"Klineto: http://127.0.0.1:{PORT}", flush=True)
     try:
         httpd.serve_forever()
     except KeyboardInterrupt:
