@@ -8,8 +8,19 @@ from urllib.parse import unquote, urlparse
 
 ROOT = Path(__file__).resolve().parent / "site"
 HOST = "0.0.0.0"
-# Amvera sets PORT to containerPort (default 80). Local run stays on 43127.
-PORT = int(os.environ.get("PORT", "43127"))
+
+
+def choose_port(raw: str | None) -> int:
+    text = (raw or "").strip()
+    if text.isdigit() and int(text) >= 1024:
+        return int(text)
+    # Amvera defaults PORT to 80, and the container cannot bind it.
+    if text:
+        return 8080
+    return 43127
+
+
+PORT = choose_port(os.environ.get("PORT"))
 
 CONTENT_TYPES = {
     ".html": "text/html; charset=utf-8",
@@ -99,14 +110,26 @@ class Handler(BaseHTTPRequestHandler):
 
 
 def main():
-    httpd = ThreadingHTTPServer((HOST, PORT), Handler)
-    print(f"Klineto: http://127.0.0.1:{PORT}", flush=True)
+    try:
+        httpd = ThreadingHTTPServer((HOST, PORT), Handler)
+    except OSError as exc:
+        print(f"Klineto failed to bind {HOST}:{PORT}: {exc}", flush=True)
+        raise
+    print(f"Klineto: http://{HOST}:{PORT}", flush=True)
     try:
         httpd.serve_forever()
     except KeyboardInterrupt:
         print("\nОстановлено")
     finally:
         httpd.server_close()
+
+
+def demo():
+    assert choose_port(None) == 43127
+    assert choose_port("") == 43127
+    assert choose_port("80") == 8080
+    assert choose_port("8080") == 8080
+    assert choose_port("43127") == 43127
 
 
 if __name__ == "__main__":

@@ -2,8 +2,8 @@ meta:
   environment: python
   toolchain:
     name: pip
-    version: "3.10"
+    version: "3.11"
 
 run:
-  scriptName: server.py
-  containerPort: 80
+  command: python3 -u server.py
+  containerPort: 8080
