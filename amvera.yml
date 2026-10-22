@@ -1,0 +1,11 @@
+# Amvera: Python + stdlib static server (site/ via server.py).
+# Docs: https://docs.amvera.ru/applications/environments/python-pip.html
+meta:
+  environment: python
+  toolchain:
+    name: pip
+    version: "3.12"
+
+run:
+  scriptName: server.py
+  containerPort: 80

@@ -1,0 +1,185 @@
+/* Klineto stitch: one shared content edge + form control heights */
+html, body {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+:root {
+  /* Exact shared content edge — same value for header logo and main shells */
+  --page-inline: 32px;
+  --form-control-h: 3rem;
+}
+
+header,
+main,
+footer,
+#seo-block {
+  max-width: none !important;
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+.max-w-7xl,
+.max-w-6xl,
+.max-w-5xl,
+.max-w-4xl,
+.max-w-\[1320px\],
+.max-w-\[1280px\],
+.max-w-\[1200px\],
+.max-w-\[1160px\],
+.max-w-\[1100px\],
+#seo-block .max-w-3xl,
+#seo-block .max-w-2xl,
+#seo-block .max-w-xl {
+  max-width: none !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/*
+ * ONE horizontal inset for header bars, main shells, SEO, footer.
+ * Shells: header > div; main flex-col > section|div; footer > div.
+ */
+header > div,
+main > .flex.flex-col > section,
+main > .flex.flex-col > div,
+main > div.flex.flex-col > section,
+main > div.flex.flex-col > div,
+main > section,
+#seo-block,
+footer > div {
+  padding-left: var(--page-inline) !important;
+  padding-right: var(--page-inline) !important;
+  box-sizing: border-box;
+}
+
+/* Scripts/styles inside the flex column must not get content padding */
+main > .flex.flex-col > script,
+main > .flex.flex-col > style,
+main > div.flex.flex-col > script,
+main > div.flex.flex-col > style {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/*
+ * Nested full-width rows inside an already-padded header shell.
+ * Do NOT zero .h-20 when it IS the shell (direct header > div.h-20).
+ */
+header > div > .w-full,
+header > div > .h-9,
+header > div > .h-10,
+header > div > .h-20,
+header > div > div.h-9,
+header > div > div.h-10,
+header > div > div.h-20 {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Direct logo/nav bar: keep the shared inset */
+header > div.h-9,
+header > div.h-10,
+header > div.h-20 {
+  padding-left: var(--page-inline) !important;
+  padding-right: var(--page-inline) !important;
+}
+
+/* Nested first wrappers inside main shells / SEO — kill second inset */
+main > .flex.flex-col > section > .w-full,
+main > .flex.flex-col > section > .px-gutter,
+main > .flex.flex-col > section > .px-6,
+main > .flex.flex-col > section > .px-8,
+main > .flex.flex-col > section > .px-10,
+main > .flex.flex-col > section > [class*="px-6"],
+main > .flex.flex-col > section > [class*="px-gutter"],
+main > .flex.flex-col > section > [class*="lg:px-"],
+main > .flex.flex-col > div > .w-full,
+main > .flex.flex-col > div > .px-gutter,
+main > .flex.flex-col > div > .px-6,
+main > .flex.flex-col > div > [class*="px-6"],
+main > .flex.flex-col > div > [class*="px-gutter"],
+main > .flex.flex-col > div > [class*="lg:px-"],
+main > div.flex.flex-col > section > .w-full,
+main > div.flex.flex-col > section > .px-gutter,
+main > div.flex.flex-col > section > .px-6,
+main > div.flex.flex-col > section > .px-8,
+main > div.flex.flex-col > section > .px-10,
+main > div.flex.flex-col > section > [class*="px-6"],
+main > div.flex.flex-col > section > [class*="px-gutter"],
+main > div.flex.flex-col > section > [class*="lg:px-"],
+main > div.flex.flex-col > div > .w-full,
+main > div.flex.flex-col > div > .px-gutter,
+main > div.flex.flex-col > div > .px-6,
+main > div.flex.flex-col > div > [class*="px-6"],
+main > div.flex.flex-col > div > [class*="px-gutter"],
+main > div.flex.flex-col > div > [class*="lg:px-"],
+main > section > .w-full,
+main > section > .px-gutter,
+main > section > .px-6,
+#seo-block > div,
+#seo-block > .w-full {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Forms: submit height = Name/Phone */
+form.lead-form input[type="text"],
+form.lead-form input[type="tel"],
+form.lead-form input:not([type]),
+form.lead-form select,
+form.job-form input[type="text"],
+form.job-form input[type="tel"],
+form.job-form input:not([type]),
+form.job-form select,
+form.lead-form button[type="submit"],
+form.job-form button[type="submit"],
+form button[type="submit"] {
+  height: var(--form-control-h) !important;
+  min-height: var(--form-control-h) !important;
+  box-sizing: border-box;
+}
+
+form.lead-form button[type="submit"],
+form.job-form button[type="submit"],
+form button[type="submit"] {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  line-height: 1.25 !important;
+}
+
+/* Hero CTA pair (not home): shared 48px height */
+main a.inline-flex.h-12 {
+  height: 3rem !important;
+  min-height: 3rem !important;
+  box-sizing: border-box;
+}
+
+/* Lead split: equal column height */
+main .grid.items-stretch > .lg\:col-span-5,
+main .grid.items-stretch > .lg\:col-span-7 {
+  height: 100%;
+}
+
+
+/* SEO block: tighter top gap after hero (pt-12 was too tall with hero pb) */
+#seo-block > div[class*="border-t"] {
+  padding-top: 1.5rem !important;
+}
+
+/* Kill Tailwind px-* still present as attributes on already-padded SEO shell */
+#seo-block.px-6,
+#seo-block[class*="px-"] {
+  padding-left: var(--page-inline) !important;
+  padding-right: var(--page-inline) !important;
+}
+
+/* Nested content shells: any direct child with horizontal padding inside padded section */
+main > .flex.flex-col > section > [class*="px-"],
+main > div.flex.flex-col > section > [class*="px-"],
+main > section > [class*="px-"] {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}

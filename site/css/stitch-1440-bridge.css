@@ -1,0 +1,105 @@
+/* Stitch 1440 bridge */
+#seo-block a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+
+/* Logo: always two lines */
+header a[data-path="glavnaya"] {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  gap: 2px !important;
+  line-height: 1 !important;
+}
+header a[data-path="glavnaya"] > span {
+  display: block !important;
+  white-space: nowrap;
+}
+
+/* Marquee: never full-bleed */
+.klineto-marquee {
+  background: transparent !important;
+  width: 100%;
+}
+.klineto-marquee-track {
+  width: max-content;
+  animation: klineto-marquee 36s linear infinite;
+  will-change: transform;
+}
+@keyframes klineto-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .klineto-marquee-track { animation: none; }
+}
+
+/* Hero unify @ desktop: banner 540; bottom stack flush with banner */
+.hero-unify-banner { height: 480px; }
+@media (min-width: 1024px) {
+  .hero-unify-banner {
+    height: 540px !important;
+    max-height: 540px !important;
+  }
+  .hero-unify-left {
+    position: relative !important;
+    height: 540px !important;
+    max-height: 540px !important;
+    overflow: hidden !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    padding-bottom: 260px !important; /* cards + CTAs + status (Stitch stack) */
+  }
+  .hero-unify-left > .hero-unify-bottom {
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+  .hero-unify-bottom .hero-unify-cards {
+    position: static !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .hero-unify-left > .hero-unify-cards {
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+}
+/* Equal-height metric cards (Stitch shell) */
+.hero-unify-cards > * {
+  min-height: 6.5rem;
+}
+
+/* Banner rounding visible on all service heroes */
+.hero-unify-banner,
+.hero-unify-banner > div {
+  border-radius: 1rem; /* rounded-2xl-ish */
+  overflow: hidden;
+}
+@media (min-width: 1024px) {
+  .hero-unify-banner,
+  .hero-unify-banner > div {
+    border-radius: 1.25rem;
+  }
+}
+
+/* Unified small gap: hero → SEO (works with section pb-16) */
+#seo-block {
+  margin-top: -32px;
+}
+#seo-block .border-t {
+  padding-top: 1.5rem;
+}
+
+
+
+#seo-block[data-page="home"] {
+  margin-top: 0;
+}
