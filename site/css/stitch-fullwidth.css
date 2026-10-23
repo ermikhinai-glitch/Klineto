@@ -183,3 +183,5 @@ main > section > [class*="px-"] {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
+
+/* Vertical rhythm lives in stitch-1440-bridge.css (linked on all pages). */

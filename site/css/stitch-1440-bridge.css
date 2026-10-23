@@ -90,16 +90,51 @@ header a[data-path="glavnaya"] > span {
   }
 }
 
-/* Unified small gap: hero → SEO (works with section pb-16) */
+/*
+ * Vertical rhythm (all pages): cut py-16/20/24 / py-space-xl stacks.
+ * Adjacent content sections ≈ 20–24px; last block → footer similarly tight.
+ * Hero-unify banner heights / absolute left stack untouched.
+ */
+:root {
+  --section-y: 0.75rem; /* 12px each side → ~24px between sections */
+  --section-y-hero-top: 2rem;
+  --section-y-hero-bottom: 1.5rem;
+}
+
+/* All sections in main (hubs + nested services + himchistka wrappers) */
+main section {
+  padding-top: var(--section-y) !important;
+  padding-bottom: var(--section-y) !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Hero: first section after marquee (keep top air; do not affect hero-unify heights) */
+main > .flex.flex-col > .klineto-marquee + section,
+main > div.flex.flex-col > .klineto-marquee + section,
+main > .klineto-marquee + section {
+  padding-top: var(--section-y-hero-top) !important;
+  padding-bottom: var(--section-y-hero-bottom) !important;
+}
+
+/* Hero → SEO */
 #seo-block {
-  margin-top: -32px;
+  margin-top: -0.5rem;
+  padding-top: 0 !important;
+  padding-bottom: var(--section-y) !important;
 }
 #seo-block .border-t {
-  padding-top: 1.5rem;
+  padding-top: 1rem;
 }
-
-
-
 #seo-block[data-page="home"] {
   margin-top: 0;
+}
+
+/* Last block → footer: kill mt-space-xl / large footer shell pt */
+footer {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+footer > div:first-child {
+  padding-top: 1rem !important; /* ~16px to first footer content */
 }
