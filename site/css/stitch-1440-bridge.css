@@ -91,25 +91,29 @@ header a[data-path="glavnaya"] > span {
 }
 
 /*
- * Vertical rhythm (all pages): cut py-16/20/24 / py-space-xl stacks.
- * Adjacent content sections ≈ 20–24px; last block → footer similarly tight.
- * Hero-unify banner heights / absolute left stack untouched.
+ * Vertical rhythm v2 (hard): target ≤16px between content blocks,
+ * ≤16–20px last → footer. Beats Tailwind py-16/20/24 / py-space-xl.
+ * Hero-unify banner heights untouched.
  */
 :root {
-  --section-y: 0.75rem; /* 12px each side → ~24px between sections */
-  --section-y-hero-top: 2rem;
-  --section-y-hero-bottom: 1.5rem;
+  --section-y: 0.5rem; /* 8px × 2 sides = 16px between sections */
+  --section-y-hero-top: 1.5rem; /* 24px after marquee */
+  --section-y-hero-bottom: 0.75rem; /* 12px before SEO */
+  --footer-pad-top: 0.5rem; /* 8px */
 }
 
-/* All sections in main (hubs + nested services + himchistka wrappers) */
-main section {
+main section,
+main > .flex.flex-col > section,
+main > div.flex.flex-col > section,
+main > section,
+main #seo-block {
   padding-top: var(--section-y) !important;
   padding-bottom: var(--section-y) !important;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
 
-/* Hero: first section after marquee (keep top air; do not affect hero-unify heights) */
+/* Hero after marquee only */
 main > .flex.flex-col > .klineto-marquee + section,
 main > div.flex.flex-col > .klineto-marquee + section,
 main > .klineto-marquee + section {
@@ -117,24 +121,37 @@ main > .klineto-marquee + section {
   padding-bottom: var(--section-y-hero-bottom) !important;
 }
 
-/* Hero → SEO */
 #seo-block {
-  margin-top: -0.5rem;
+  margin-top: -0.25rem !important;
   padding-top: 0 !important;
   padding-bottom: var(--section-y) !important;
 }
 #seo-block .border-t {
-  padding-top: 1rem;
+  padding-top: 0.75rem !important;
 }
 #seo-block[data-page="home"] {
-  margin-top: 0;
+  margin-top: 0 !important;
 }
 
-/* Last block → footer: kill mt-space-xl / large footer shell pt */
+/* Kill leftover large vertical utilities if CDN wins on non-section shells */
+main .py-space-xl,
+main .py-16,
+main .py-18,
+main .py-20,
+main .py-24,
+main .py-14,
+main .py-12,
+main .lg\:py-24,
+main .lg\:py-20,
+main .lg\:py-16 {
+  padding-top: var(--section-y) !important;
+  padding-bottom: var(--section-y) !important;
+}
+
 footer {
   margin-top: 0 !important;
   padding-top: 0 !important;
 }
 footer > div:first-child {
-  padding-top: 1rem !important; /* ~16px to first footer content */
+  padding-top: var(--footer-pad-top) !important;
 }
