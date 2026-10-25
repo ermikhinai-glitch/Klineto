@@ -23,7 +23,7 @@ PORT=43210 python3 server.py
 Репозиторий: [github.com/ermikhinai-glitch/Klineto](https://github.com/ermikhinai-glitch/Klineto) (ветка `main`).
 
 1. В [Amvera](https://amvera.ru) создайте приложение из GitHub-репозитория (или подключите remote Amvera и сделайте `git push`).
-2. В корне уже есть `amvera.yml`: Python 3.12 + `pip`, запуск `python3 server.py`, `containerPort: 80`.
-3. Сервер слушает `0.0.0.0` и берёт порт из переменной `PORT` (на Amvera по умолчанию `80`).
+2. В корне уже есть `amvera.yml`: Python 3.12 + `pip`, запуск `python3 -u server.py`, `containerPort: 8080`.
+3. Сервер слушает `0.0.0.0` и берёт порт из `PORT` (на Amvera это `8080`). Порт `80` в контейнере не слушается — из‑за этого бывает 503.
 4. Зависимостей pip нет (`requirements.txt` пустой по смыслу — только stdlib).
-5. После сборки откройте выданный Amvera-домен; при 502 проверьте, что приложение биндится на `0.0.0.0` и порт совпадает с `containerPort` / `PORT`.
+5. После пуша нажмите **Собрать** (не только перезапуск). При 502/503 сверьте `containerPort` и реальный bind в логе приложения.

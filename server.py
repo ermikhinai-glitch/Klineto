@@ -8,7 +8,7 @@ from urllib.parse import unquote, urlparse
 
 ROOT = Path(__file__).resolve().parent / "site"
 HOST = "0.0.0.0"
-# Amvera sets PORT (default 80); local default keeps the usual dev port.
+# Amvera sets PORT to run.containerPort (8080 in amvera.yml). Local default: 43127.
 PORT = int(os.environ.get("PORT", "43127"))
 
 CONTENT_TYPES = {
@@ -95,16 +95,20 @@ class Handler(BaseHTTPRequestHandler):
         self.wfile.write(body)
 
     def log_message(self, fmt, *args):
-        print("%s - %s" % (self.address_string(), fmt % args))
+        print("%s - %s" % (self.address_string(), fmt % args), flush=True)
 
 
 def main():
-    httpd = ThreadingHTTPServer((HOST, PORT), Handler)
-    print(f"Klineto: http://127.0.0.1:{PORT}")
+    try:
+        httpd = ThreadingHTTPServer((HOST, PORT), Handler)
+    except OSError as exc:
+        print(f"Klineto failed to bind {HOST}:{PORT}: {exc}", flush=True)
+        raise
+    print(f"Klineto: http://{HOST}:{PORT}", flush=True)
     try:
         httpd.serve_forever()
     except KeyboardInterrupt:
-        print("\nОстановлено")
+        print("\nОстановлено", flush=True)
     finally:
         httpd.server_close()
 

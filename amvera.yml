@@ -1,5 +1,6 @@
 # Amvera: Python + stdlib static server (site/ via server.py).
 # Docs: https://docs.amvera.ru/applications/environments/python-pip.html
+# Use 8080 — binding privileged port 80 in the container causes 503.
 meta:
   environment: python
   toolchain:
@@ -7,5 +8,5 @@ meta:
     version: "3.12"
 
 run:
-  scriptName: server.py
-  containerPort: 80
+  command: python3 -u server.py
+  containerPort: 8080
