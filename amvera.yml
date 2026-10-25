@@ -8,5 +8,6 @@ meta:
     version: "3.12"
 
 run:
-  command: python3 -u server.py
+  # Amvera does not always inject PORT; pin it so the app matches containerPort.
+  command: env PORT=8080 python3 -u server.py
   containerPort: 8080

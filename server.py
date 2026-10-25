@@ -8,7 +8,7 @@ from urllib.parse import unquote, urlparse
 
 ROOT = Path(__file__).resolve().parent / "site"
 HOST = "0.0.0.0"
-# Amvera sets PORT to run.containerPort (8080 in amvera.yml). Local default: 43127.
+# Local default 43127. Amvera pins PORT=8080 in amvera.yml (env is not always injected).
 PORT = int(os.environ.get("PORT", "43127"))
 
 CONTENT_TYPES = {
