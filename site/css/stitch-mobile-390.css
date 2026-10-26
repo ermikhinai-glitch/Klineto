@@ -418,6 +418,30 @@
     touch-action: none;
     overscroll-behavior: none;
   }
+
+  /*
+   * Clean mobile banners/photos: no text, badges, VIP cards, supervisor chips,
+   * equipment callouts, or gradients on top of imagery. Keep the photo layer
+   * (img or absolute bg-cover). Desktop unchanged (this block is ≤1023 only).
+   */
+  .hero-unify-banner .absolute:not(img):not([class*="bg-cover"]),
+  .hero-unify-banner .absolute[class*="bg-gradient"] {
+    display: none !important;
+  }
+
+  /* Home + any img wrapper with overlay siblings */
+  main .relative:has(> img) > .absolute:not(img):not([class*="bg-cover"]),
+  main .relative:has(> img) > .absolute[class*="bg-gradient"] {
+    display: none !important;
+  }
+
+  /* Background-image heroes / map tiles with absolute callouts */
+  main .relative:has(> .absolute[class*="bg-cover"]) > .absolute:not([class*="bg-cover"]),
+  main .relative > [class*="bg-cover"].relative > .absolute,
+  main [class*="bg-cover"].relative > .absolute:not([class*="bg-cover"]),
+  main .relative:has(> [class*="bg-cover"]:not(.absolute)) > [class*="bg-cover"] > .absolute {
+    display: none !important;
+  }
 }
 
 /* Desktop: ensure mobile chrome stays out of the way */
