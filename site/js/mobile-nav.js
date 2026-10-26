@@ -50,7 +50,10 @@
     if (!d || !b) return;
     d.classList.add("is-open");
     b.classList.add("is-open");
-    document.documentElement.style.overflow = "hidden";
+    document.documentElement.classList.add("m-drawer-open");
+    // Clear any leftover inline overflow from older builds
+    document.documentElement.style.overflow = "";
+    document.body.style.overflow = "";
   }
 
   function closeDrawer() {
@@ -59,11 +62,17 @@
     if (!d || !b) return;
     d.classList.remove("is-open");
     b.classList.remove("is-open");
+    document.documentElement.classList.remove("m-drawer-open");
     document.documentElement.style.overflow = "";
+    document.body.style.overflow = "";
   }
 
   document.addEventListener("DOMContentLoaded", function () {
     markActive();
+    // Ensure scroll is not stuck locked from a previous session/state
+    document.documentElement.classList.remove("m-drawer-open");
+    document.documentElement.style.overflow = "";
+    document.body.style.overflow = "";
     var btn = qs(".m-menu-btn");
     var close = qs(".m-drawer-close");
     var backdrop = qs(".m-drawer-backdrop");
@@ -72,6 +81,9 @@
     if (backdrop) backdrop.addEventListener("click", closeDrawer);
     qsa(".m-drawer a").forEach(function (a) {
       a.addEventListener("click", closeDrawer);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closeDrawer();
     });
   });
 })();

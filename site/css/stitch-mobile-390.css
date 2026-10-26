@@ -377,9 +377,46 @@
     background: #15803d;
   }
 
-  /* Prevent horizontal scroll from wide tables/marquee */
-  html, body {
-    overflow-x: hidden;
+  /*
+   * Horizontal clip WITHOUT locking vertical scroll.
+   * Setting overflow-x:hidden on BOTH html+body makes Chromium compute
+   * overflow as "hidden auto" and blocks wheel/touch viewport scrolling
+   * (page height grows on body → nowhere to scroll). Keep y scroll on html only.
+   */
+  html {
+    overflow-x: clip;
+    overflow-y: auto;
+    height: auto;
+    overscroll-behavior-y: auto;
+  }
+  body {
+    overflow-x: clip;
+    overflow-y: visible;
+    height: auto;
+    min-height: 100%;
+    touch-action: pan-y pinch-zoom;
+  }
+  main {
+    overflow: visible;
+    touch-action: pan-y pinch-zoom;
+  }
+
+  /* Drawer closed: never intercept scroll/gestures */
+  .m-drawer:not(.is-open) {
+    visibility: hidden;
+    pointer-events: none !important;
+  }
+  .m-drawer-backdrop:not(.is-open) {
+    display: none !important;
+    pointer-events: none !important;
+  }
+
+  /* Lock page scroll ONLY while drawer is open */
+  html.m-drawer-open,
+  html.m-drawer-open body {
+    overflow: hidden !important;
+    touch-action: none;
+    overscroll-behavior: none;
   }
 }
 
@@ -392,5 +429,10 @@
   .m-menu-btn,
   .m-swiss-badge {
     display: none !important;
+  }
+  html.m-drawer-open,
+  html.m-drawer-open body {
+    overflow: visible !important;
+    touch-action: auto;
   }
 }
